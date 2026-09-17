@@ -4,199 +4,342 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ertan Agaoglu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    :root{--bg:#fafaf8;--text:#1a1a1a;--muted:#666;--border:#e8e8e6;--accent:#1a1a1a;--section-gap:3rem}
-    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
-    a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);transition:border-color .2s}
-    a:hover{border-color:var(--text)}
-    .wrap{max-width:720px;margin:0 auto;padding:2rem 1.5rem 4rem}
+    :root{
+      --bg:#fafafa;
+      --text:#1a1a1a;
+      --muted:#71717a;
+      --light:#a1a1aa;
+      --border:#e4e4e7;
+      --surface:#fff;
+      --accent:#2563eb;
+      --accent-soft:rgba(37,99,235,.06);
+      --serif:'Playfair Display',Georgia,serif;
+      --sans:'Inter',system-ui,sans-serif;
+    }
+    html{scroll-behavior:smooth;scroll-padding-top:80px}
+    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
 
-    /* Header */
-    .header{display:flex;gap:1.5rem;align-items:flex-start;padding-bottom:2rem;border-bottom:1px solid var(--border)}
-    .photo{width:100px;height:100px;border-radius:50%;object-fit:cover;flex-shrink:0}
-    .header-text h1{font-size:1.5rem;font-weight:600;letter-spacing:-.02em}
-    .header-text p{color:var(--muted);font-size:.9rem;margin-top:.25rem}
-    .header-links{display:flex;gap:1rem;margin-top:.5rem;font-size:.85rem}
-    .header-links a{border:none;color:var(--muted);transition:color .2s}
-    .header-links a:hover{color:var(--text)}
+    /* Nav */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+    nav.scrolled{box-shadow:0 1px 12px rgba(0,0,0,.06)}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav-logo{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-.01em}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{font-size:.85rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.02em;transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--text)}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
+    .nav-toggle svg{width:24px;height:24px;stroke:var(--text);stroke-width:2;fill:none}
+
+    /* Hero */
+    .hero{padding:10rem 2rem 6rem;max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:4rem}
+    .hero-text{flex:1}
+    .hero-photo{width:200px;height:200px;border-radius:50%;object-fit:cover;flex-shrink:0}
+    .hero-label{font-size:.8rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.75rem}
+    .hero-name{font-family:var(--serif);font-size:3rem;font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem}
+    .hero-tagline{font-size:1.15rem;color:var(--muted);max-width:520px;line-height:1.7;font-weight:300}
+    .hero-links{display:flex;gap:1.25rem;margin-top:1.5rem}
+    .hero-links a{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+    .hero-links a:hover{color:var(--text)}
+    .hero-links svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none}
 
     /* Sections */
-    section{padding-top:var(--section-gap)}
-    section h2{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:1rem}
-    .about{font-size:.95rem;color:#333;max-width:600px}
+    .section{max-width:1100px;margin:0 auto;padding:5rem 2rem}
+    .section-label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem}
+    .section-title{font-family:var(--serif);font-size:2rem;font-weight:600;letter-spacing:-.01em;margin-bottom:2rem}
+    .divider{border:none;border-top:1px solid var(--border);max-width:1100px;margin:0 auto}
 
-    /* Education */
-    .edu-item{margin-bottom:1rem}
-    .edu-item .degree{font-weight:500;font-size:.95rem}
-    .edu-item .school{font-size:.85rem;color:var(--muted)}
-    .edu-item .detail{font-size:.8rem;color:var(--muted);margin-top:.15rem}
-
-    /* Experience */
-    .exp-item{margin-bottom:1.25rem}
-    .exp-item .role{font-weight:500;font-size:.95rem}
-    .exp-item .org{font-size:.85rem;color:var(--muted)}
-    .exp-item .exp-desc{font-size:.8rem;color:#555;margin-top:.25rem}
+    /* Research */
+    .research-intro{font-size:1.05rem;line-height:1.8;color:#3f3f46;max-width:700px;margin-bottom:2.5rem}
+    .research-areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+    .area-card{padding:1.5rem;border:1px solid var(--border);border-radius:12px;background:var(--surface);transition:border-color .2s,box-shadow .2s}
+    .area-card:hover{border-color:#d4d4d8;box-shadow:0 4px 24px rgba(0,0,0,.04)}
+    .area-card h3{font-size:.95rem;font-weight:600;margin-bottom:.5rem}
+    .area-card p{font-size:.85rem;color:var(--muted);line-height:1.6}
 
     /* Publications */
-    .pub-item{margin-bottom:.75rem;font-size:.9rem;padding-left:0}
-    .pub-item .pub-venue{font-size:.75rem;color:var(--muted);display:inline}
-    .pub-year{font-size:.75rem;color:var(--muted);margin-right:.35rem}
+    .pub-list{display:flex;flex-direction:column;gap:1.25rem}
+    .pub{padding:1.25rem 1.5rem;border:1px solid var(--border);border-radius:10px;background:var(--surface);transition:border-color .2s}
+    .pub:hover{border-color:#d4d4d8}
+    .pub-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.4rem}
+    .pub-type{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);padding:3px 8px;border-radius:4px}
+    .pub-year{font-size:.75rem;color:var(--light)}
+    .pub-title{font-size:.95rem;font-weight:500;line-height:1.5}
+    .pub-authors{font-size:.82rem;color:var(--muted);margin-top:.25rem}
+    .pub-venue{font-size:.82rem;color:var(--muted);font-style:italic}
+    .pub-status{font-size:.7rem;font-weight:500;color:#d97706;background:rgba(217,119,6,.08);padding:3px 8px;border-radius:4px}
 
     /* Teaching */
-    .teach-item{display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:.35rem}
-    .teach-item .course-name{flex:1}
-    .teach-item .semesters{color:var(--muted);font-size:.8rem;text-align:right;flex-shrink:0;margin-left:1rem}
+    .teaching-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem}
+    .course{padding:1.25rem 1.5rem;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
+    .course-code{font-size:.75rem;font-weight:600;color:var(--accent);margin-bottom:.25rem}
+    .course-name{font-size:.95rem;font-weight:500}
+    .course-detail{font-size:.82rem;color:var(--muted);margin-top:.25rem}
 
     /* Awards */
-    .award-item{margin-bottom:.5rem;font-size:.9rem}
-    .award-item .award-year{font-size:.75rem;color:var(--muted);margin-right:.35rem}
+    .awards-list{display:flex;flex-direction:column;gap:1rem}
+    .award{display:flex;gap:1.25rem;align-items:baseline}
+    .award-year{font-size:.8rem;font-weight:600;color:var(--accent);min-width:3rem;flex-shrink:0}
+    .award-info h3{font-size:.95rem;font-weight:500}
+    .award-info p{font-size:.82rem;color:var(--muted);margin-top:.15rem}
 
-    /* Skills */
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem}
-    .skill-group .skill-label{font-size:.8rem;font-weight:500;margin-bottom:.2rem}
-    .skill-group .skill-list{font-size:.8rem;color:var(--muted)}
+    /* Contact */
+    .contact-section{background:var(--surface);border-top:1px solid var(--border);margin-top:3rem}
+    .contact-inner{max-width:1100px;margin:0 auto;padding:5rem 2rem;text-align:center}
+    .contact-inner .section-title{margin-bottom:1rem}
+    .contact-desc{font-size:1rem;color:var(--muted);margin-bottom:2rem}
+    .contact-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+    .contact-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:500;color:var(--text);text-decoration:none;padding:.6rem 1.25rem;border:1px solid var(--border);border-radius:8px;transition:border-color .2s,background .2s}
+    .contact-link:hover{border-color:#d4d4d8;background:var(--bg)}
+    .contact-link svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none}
 
-    /* Responsive */
-    @media(max-width:500px){
-      .header{flex-direction:column;align-items:center;text-align:center}
-      .header-links{justify-content:center}
-      .teach-item{flex-direction:column}
-      .teach-item .semesters{text-align:left;margin-left:0}
+    /* Footer */
+    footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--light);border-top:1px solid var(--border)}
+
+    /* Mobile nav */
+    @media(max-width:768px){
+      .nav-links{position:fixed;top:64px;left:0;right:0;background:rgba(250,250,250,.97);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem 2rem;gap:1.25rem;border-bottom:1px solid var(--border);transform:translateY(-120%);transition:transform .25s ease}
+      .nav-links.open{transform:translateY(0)}
+      .nav-toggle{display:block}
+      .hero{flex-direction:column-reverse;text-align:center;padding-top:8rem;gap:2rem}
+      .hero-name{font-size:2.25rem}
+      .hero-tagline{margin:0 auto}
+      .hero-links{justify-content:center}
+      .hero-photo{width:150px;height:150px}
+      .section{padding:3.5rem 1.5rem}
+      .section-title{font-size:1.6rem}
+      .contact-inner{padding:3.5rem 1.5rem}
     }
   </style>
 </head>
 <body>
-<div class="wrap">
 
-  <div class="header">
-    <img class="photo" src="https://sc.edu/study/colleges_schools/cic/images/2024-2025/spotlight/phd_students/agaoglu_ertan.png" alt="Ertan Agaoglu">
-    <div class="header-text">
-      <h1>Ertan Agaoglu</h1>
-      <p>Ph.D. Candidate, Journalism &amp; Mass Communications<br>University of South Carolina</p>
-      <div class="header-links">
-        <a href="mailto:eagaoglu@email.sc.edu">Email</a>
-        <a href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">Google Scholar</a>
-        <a href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">LinkedIn</a>
-        <a href="https://sc.edu/study/colleges_schools/cic/academic_programs/phd/mass_communication_phd/doctoral_students/agaoglu_ertan.php" target="_blank">USC Profile</a>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Ertan Agaoglu</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#research" onclick="this.closest('.nav-links').classList.remove('open')">Research</a></li>
+      <li><a href="#publications" onclick="this.closest('.nav-links').classList.remove('open')">Publications</a></li>
+      <li><a href="#teaching" onclick="this.closest('.nav-links').classList.remove('open')">Teaching</a></li>
+      <li><a href="#awards" onclick="this.closest('.nav-links').classList.remove('open')">Awards</a></li>
+      <li><a href="#contact" onclick="this.closest('.nav-links').classList.remove('open')">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-label">Ph.D. Candidate &middot; University of South Carolina</div>
+    <h1 class="hero-name">Ertan Agaoglu</h1>
+    <p class="hero-tagline">Communication researcher studying how people perceive, trust, and respond to artificial intelligence in strategic and health communication contexts.</p>
+    <div class="hero-links">
+      <a href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 7H20v13H6.5A2.5 2.5 0 0 1 4 17.5v-13z"/></svg>
+        Google Scholar
+      </a>
+      <a href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-3a2 2 0 1 1 4 0v3"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://sc.edu/study/colleges_schools/cic/academic_programs/phd/mass_communication_phd/doctoral_students/agaoglu_ertan.php" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M2 10l10-7 10 7"/><path d="M4 10v11h16V10"/></svg>
+        USC Profile
+      </a>
+    </div>
+  </div>
+  <img class="hero-photo" src="https://sc.edu/study/colleges_schools/cic/images/2024-2025/spotlight/phd_students/agaoglu_ertan.png" alt="Ertan Agaoglu">
+</section>
+
+<hr class="divider">
+
+<section class="section" id="research">
+  <div class="section-label">Research</div>
+  <h2 class="section-title">What I Study</h2>
+  <p class="research-intro">I investigate how people interpret and respond to AI systems and AI-generated content. My work sits at the intersection of communication, technology, and society, using experimental, survey, psychophysiological, computational, and qualitative methods.</p>
+  <div class="research-areas">
+    <div class="area-card">
+      <h3>AI Trust &amp; Persuasion</h3>
+      <p>How explainability and emotional support shape trust in AI health advisors and persuasive technologies.</p>
+    </div>
+    <div class="area-card">
+      <h3>AI in Health &amp; Strategic Communication</h3>
+      <p>Examining message acceptance, behavioral intentions, and effectiveness of AI-delivered health and advertising messages.</p>
+    </div>
+    <div class="area-card">
+      <h3>Algorithmic Bias &amp; Digital Inequalities</h3>
+      <p>Investigating disparities in AI adoption, skills, and outcomes across gender, age, and demographic groups.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="publications">
+  <div class="section-label">Publications</div>
+  <h2 class="section-title">Selected Works</h2>
+  <div class="pub-list">
+
+    <div class="pub">
+      <div class="pub-meta">
+        <span class="pub-type">Journal Article</span>
+        <span class="pub-year">2026</span>
+      </div>
+      <div class="pub-title">Perceptions of AI-generated profile pictures: Effects on quality, attractiveness, and trustworthiness</div>
+      <div class="pub-authors">Long, J., Xiao, J., McCray, S., <strong>Agaoglu, E.</strong>, Al-Ajmi, A., Akalonu, C., &amp; Xu, Y.</div>
+      <div class="pub-venue">Cyberpsychology: Journal of Psychosocial Research on Cyberspace, 20(4)</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-meta">
+        <span class="pub-status">Revisions Submitted</span>
+      </div>
+      <div class="pub-title">The role of agency locus and chatbot use frequency in AI-mediated emotional support</div>
+      <div class="pub-authors"><strong>Agaoglu, E.</strong>, &amp; Wu, L.</div>
+      <div class="pub-venue">Journal of Communication Technology</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-meta">
+        <span class="pub-status">Revisions Submitted</span>
+      </div>
+      <div class="pub-title">Auditing algorithmic editorial gatekeeping: Bias in AI news selection</div>
+      <div class="pub-authors">Long, J., McCray, S., <strong>Agaoglu, E.</strong>, Akalonu, C., &amp; Xiao, J.</div>
+      <div class="pub-venue">Digital Journalism</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-meta">
+        <span class="pub-type">Book Chapter</span>
+        <span class="pub-year">2025</span>
+      </div>
+      <div class="pub-title">Artificial intelligence in advertising: Unveiling challenges and opportunities via the consumer's lens</div>
+      <div class="pub-authors">Wu, L., <strong>Agaoglu, E.</strong>, &amp; Sun, Y.</div>
+      <div class="pub-venue">Handbook of Innovations in Strategic Communication</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-meta">
+        <span class="pub-type">Conference</span>
+        <span class="pub-year">2026</span>
+      </div>
+      <div class="pub-title">The AI divide: How gender shapes attitudes and skills toward generative AI</div>
+      <div class="pub-authors"><strong>Agaoglu, E.</strong>, &amp; Al-Ajmi, A.</div>
+      <div class="pub-venue">109th Annual AEJMC Conference, New Orleans, LA</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-meta">
+        <span class="pub-type">Conference</span>
+        <span class="pub-year">2024</span>
+      </div>
+      <div class="pub-title">AI chatbots for emotional support: Chatbot agency locus and user prior experience</div>
+      <div class="pub-authors">Wu, L., &amp; <strong>Agaoglu, E.</strong></div>
+      <div class="pub-venue">74th Annual ICA Conference, Gold Coast, Australia</div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="teaching">
+  <div class="section-label">Teaching</div>
+  <h2 class="section-title">Courses</h2>
+  <div class="teaching-grid">
+    <div class="course">
+      <div class="course-code">JOUR 312 / 504</div>
+      <div class="course-name">International Mass Communications</div>
+      <div class="course-detail">Instructor of Record &middot; Spring 25, Fall 25, Spring 26, Fall 26</div>
+    </div>
+    <div class="course">
+      <div class="course-code">JOUR 306</div>
+      <div class="course-name">Theories of Mass Communications</div>
+      <div class="course-detail">Instructor of Record &middot; Spring 24, Fall 24</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="awards">
+  <div class="section-label">Recognition</div>
+  <h2 class="section-title">Awards &amp; Grants</h2>
+  <div class="awards-list">
+    <div class="award">
+      <span class="award-year">2026</span>
+      <div class="award-info">
+        <h3>Bryce Rucker Graduate Student Excellence in Research Award</h3>
+        <p>In recognition of research work conducted as a graduate student</p>
+      </div>
+    </div>
+    <div class="award">
+      <span class="award-year">2026</span>
+      <div class="award-info">
+        <h3>USC Libraries Data Visualization Award &mdash; First Place</h3>
+        <p>In recognition of excellence in data visualization</p>
+      </div>
+    </div>
+    <div class="award">
+      <span class="award-year">2026</span>
+      <div class="award-info">
+        <h3>International Student Excellence Scholarship</h3>
+        <p>Academic excellence, community engagement, and leadership</p>
+      </div>
+    </div>
+    <div class="award">
+      <span class="award-year">2025</span>
+      <div class="award-info">
+        <h3>SJMC Graduate Student Excellence in Teaching Award</h3>
+        <p>Outstanding teaching contributions</p>
+      </div>
+    </div>
+    <div class="award">
+      <span class="award-year">2024</span>
+      <div class="award-info">
+        <h3>Internal Funding Program &mdash; Principal Investigator</h3>
+        <p>Student-track grant for research on artificial intelligence</p>
       </div>
     </div>
   </div>
+</section>
 
-  <section>
-    <h2>Research Interests</h2>
-    <p class="about">My research examines how people interpret and respond to AI systems and AI-generated content, with particular attention to trust, persuasion, message acceptance, and behavioral intentions in strategic and health communication. I also investigate AI's broader societal consequences, including algorithmic bias and inequalities in AI adoption and skills across demographic groups.</p>
-  </section>
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Contact</h2>
+    <p class="contact-desc">I'm always open to discussing research collaborations, teaching opportunities, or anything AI and communication.</p>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:eagaoglu@email.sc.edu">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        eagaoglu@email.sc.edu
+      </a>
+      <a class="contact-link" href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 7H20v13H6.5A2.5 2.5 0 0 1 4 17.5v-13z"/></svg>
+        Google Scholar
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-3a2 2 0 1 1 4 0v3"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
 
-  <section>
-    <h2>Education</h2>
-    <div class="edu-item">
-      <div class="degree">Ph.D. in Journalism and Mass Communications</div>
-      <div class="school">University of South Carolina &middot; 2022 &ndash; Present</div>
-      <div class="detail">Dissertation: Building Trust in AI Health Advisors: The Role of Explainability and Emotional Support</div>
-    </div>
-    <div class="edu-item">
-      <div class="degree">M.A. in Communication Sciences</div>
-      <div class="school">Hacettepe University &middot; 2019 &ndash; 2021</div>
-    </div>
-    <div class="edu-item">
-      <div class="degree">B.A. in American Culture and Literature</div>
-      <div class="school">Hacettepe University &middot; 2011 &ndash; 2016</div>
-      <div class="detail">Erasmus+ Exchange, Ghent University (2015&ndash;2016)</div>
-    </div>
-  </section>
+<footer>
+  &copy; 2026 Ertan Agaoglu. University of South Carolina.
+</footer>
 
-  <section>
-    <h2>Experience</h2>
-    <div class="exp-item">
-      <div class="role">Graduate Assistant &amp; Instructor of Record</div>
-      <div class="org">School of Journalism and Mass Communications, USC &middot; 2022 &ndash; Present</div>
-    </div>
-    <div class="exp-item">
-      <div class="role">Lab Coordinator</div>
-      <div class="org">USC Biometrics and User Experience Lab &middot; 2025 &ndash; 2026</div>
-    </div>
-    <div class="exp-item">
-      <div class="role">Lab Analyst</div>
-      <div class="org">USC Social Media Insights Lab &middot; Summers 2023 &ndash; 2026</div>
-      <div class="exp-desc">Produced social media analytics reports for external clients. Contributed to College Sports Social Pulse, licensed to Fox Sports and featured in Sports Business Journal.</div>
-    </div>
-    <div class="exp-item">
-      <div class="role">Research and Teaching Assistant</div>
-      <div class="org">College of Communication, Hacettepe University &middot; 2019 &ndash; 2022</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Publications</h2>
-
-    <div class="pub-item">
-      <span class="pub-year">2026</span>
-      Long, J., Xiao, J., McCray, S., <strong>Agaoglu, E.</strong>, Al-Ajmi, A., Akalonu, C., &amp; Xu, Y. Perceptions of AI-generated profile pictures: Effects on quality, attractiveness, and trustworthiness. <em>Cyberpsychology</em>, 20(4).
-    </div>
-    <div class="pub-item">
-      <span class="pub-year">R&amp;R</span>
-      <strong>Agaoglu, E.</strong>, &amp; Wu, L. The role of agency locus and chatbot use frequency in AI-mediated emotional support. <em>Journal of Communication Technology</em>.
-    </div>
-    <div class="pub-item">
-      <span class="pub-year">R&amp;R</span>
-      Long, J., McCray, S., <strong>Agaoglu, E.</strong>, Akalonu, C., &amp; Xiao, J. Auditing algorithmic editorial gatekeeping: Bias in AI news selection. <em>Digital Journalism</em>.
-    </div>
-    <div class="pub-item">
-      <span class="pub-year">2025</span>
-      Wu, L., <strong>Agaoglu, E.</strong>, &amp; Sun, Y. Artificial intelligence in advertising: Unveiling challenges and opportunities via the consumer's lens. In <em>Handbook of Innovations in Strategic Communication</em>.
-    </div>
-  </section>
-
-  <section>
-    <h2>Selected Presentations</h2>
-    <div class="pub-item"><span class="pub-year">AEJMC 26</span> <strong>Agaoglu, E.</strong>, &amp; Al-Ajmi, A. The AI divide: How gender shapes attitudes and skills toward generative AI.</div>
-    <div class="pub-item"><span class="pub-year">AEJMC 25</span> <strong>Agaoglu, E.</strong>, &amp; Al-Ajmi, A. Exploring generational digital inequalities in the age of algorithms.</div>
-    <div class="pub-item"><span class="pub-year">ICA 24</span> Wu, L., &amp; <strong>Agaoglu, E.</strong> AI chatbots for emotional support: Chatbot agency locus and user prior experience.</div>
-    <div class="pub-item"><span class="pub-year">AEJMC 24</span> <strong>Agaoglu, E.</strong> "Hey AI, write a story for me!": Investigating gender discourse in AI-powered chatbots.</div>
-    <div class="pub-item"><span class="pub-year">AEJMC 23</span> <strong>Agaoglu, E.</strong> Digital inequalities among the elderly from a cumulative (dis)advantage perspective.</div>
-  </section>
-
-  <section>
-    <h2>Teaching</h2>
-    <div class="teach-item"><span class="course-name">JOUR 312/504 International Mass Communications</span><span class="semesters">Spring 25, Fall 25, Spring 26, Fall 26</span></div>
-    <div class="teach-item"><span class="course-name">JOUR 306 Theories of Mass Communications</span><span class="semesters">Spring 24, Fall 24</span></div>
-  </section>
-
-  <section>
-    <h2>Awards</h2>
-    <div class="award-item"><span class="award-year">2026</span> Bryce Rucker Graduate Student Excellence in Research Award</div>
-    <div class="award-item"><span class="award-year">2026</span> USC Libraries Data Visualization Award &mdash; First Place</div>
-    <div class="award-item"><span class="award-year">2025</span> SJMC Graduate Student Excellence in Teaching Award</div>
-    <div class="award-item"><span class="award-year">2026</span> International Student Excellence Scholarship</div>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <div class="skill-label">Statistics</div>
-        <div class="skill-list">SPSS, R, Jamovi, Dedoose</div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-label">Programming</div>
-        <div class="skill-list">Python, HTML</div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-label">Biometrics</div>
-        <div class="skill-list">iMotions, Eye Tracking, GSR, EEG, EMG</div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-label">Social Listening</div>
-        <div class="skill-list">NetBase Quid, Brandwatch, Sprinklr</div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-label">Visualization</div>
-        <div class="skill-list">Tableau, Adobe Creative Suite</div>
-      </div>
-    </div>
-  </section>
-
-</div>
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10)
+})
+</script>
 </body>
 </html>
