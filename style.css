@@ -50,6 +50,8 @@ nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit
 .info-item:last-child{border-right:none}
 .info-label{display:block;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
 .info-value{display:block;font-size:.9rem;font-weight:500;color:var(--text)}
+.info-link{color:var(--text);text-decoration:none;transition:color .2s}
+.info-link:hover{color:var(--accent2)}
 
 /* Sections */
 .section{max-width:1400px;margin:0 auto;padding:6rem 3rem}
