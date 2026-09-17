@@ -6,186 +6,130 @@
   <title>Ertan Agaoglu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    :root{
-      --bg:#fafafa;
-      --text:#1a1a1a;
-      --muted:#71717a;
-      --light:#a1a1aa;
-      --border:#e4e4e7;
-      --surface:#fff;
-      --accent:#2563eb;
-      --accent-soft:rgba(37,99,235,.06);
-      --serif:'Playfair Display',Georgia,serif;
-      --sans:'Inter',system-ui,sans-serif;
-    }
-    html{scroll-behavior:smooth;scroll-padding-top:80px}
-    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
-
-    /* Nav */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-    nav.scrolled{box-shadow:0 1px 12px rgba(0,0,0,.06)}
-    .nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
-    .nav-logo{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-.01em}
-    .nav-links{display:flex;gap:2rem;list-style:none}
-    .nav-links a{font-size:.85rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.02em;transition:color .2s}
-    .nav-links a:hover,.nav-links a.active{color:var(--text)}
-    .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
-    .nav-toggle svg{width:24px;height:24px;stroke:var(--text);stroke-width:2;fill:none}
-
-    /* Hero */
-    .hero{padding:10rem 2rem 6rem;max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:4rem}
-    .hero-text{flex:1}
-    .hero-photo{width:200px;height:200px;border-radius:50%;object-fit:cover;flex-shrink:0}
-    .hero-label{font-size:.8rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.75rem}
-    .hero-name{font-family:var(--serif);font-size:3rem;font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem}
-    .hero-tagline{font-size:1.15rem;color:var(--muted);max-width:520px;line-height:1.7;font-weight:300}
-    .hero-links{display:flex;gap:1.25rem;margin-top:1.5rem}
-    .hero-links a{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
-    .hero-links a:hover{color:var(--text)}
-    .hero-links svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none}
-
-    /* Sections */
-    .section{max-width:1100px;margin:0 auto;padding:5rem 2rem}
-    .section-label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem}
-    .section-title{font-family:var(--serif);font-size:2rem;font-weight:600;letter-spacing:-.01em;margin-bottom:2rem}
-    .divider{border:none;border-top:1px solid var(--border);max-width:1100px;margin:0 auto}
-
-    /* Research */
-    .research-intro{font-size:1.05rem;line-height:1.8;color:#3f3f46;max-width:700px;margin-bottom:2.5rem}
-    .research-areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-    .area-card{padding:1.5rem;border:1px solid var(--border);border-radius:12px;background:var(--surface);transition:border-color .2s,box-shadow .2s}
-    .area-card:hover{border-color:#d4d4d8;box-shadow:0 4px 24px rgba(0,0,0,.04)}
-    .area-card h3{font-size:.95rem;font-weight:600;margin-bottom:.5rem}
-    .area-card p{font-size:.85rem;color:var(--muted);line-height:1.6}
-
-    /* Publications */
-    .pub-list{display:flex;flex-direction:column;gap:1.25rem}
-    .pub{padding:1.25rem 1.5rem;border:1px solid var(--border);border-radius:10px;background:var(--surface);transition:border-color .2s}
-    .pub:hover{border-color:#d4d4d8}
-    .pub-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.4rem}
-    .pub-type{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);padding:3px 8px;border-radius:4px}
-    .pub-year{font-size:.75rem;color:var(--light)}
-    .pub-title{font-size:.95rem;font-weight:500;line-height:1.5}
-    .pub-authors{font-size:.82rem;color:var(--muted);margin-top:.25rem}
-    .pub-venue{font-size:.82rem;color:var(--muted);font-style:italic}
-    .pub-status{font-size:.7rem;font-weight:500;color:#d97706;background:rgba(217,119,6,.08);padding:3px 8px;border-radius:4px}
-
-    /* Teaching */
-    .teaching-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem}
-    .course{padding:1.25rem 1.5rem;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
-    .course-code{font-size:.75rem;font-weight:600;color:var(--accent);margin-bottom:.25rem}
-    .course-name{font-size:.95rem;font-weight:500}
-    .course-detail{font-size:.82rem;color:var(--muted);margin-top:.25rem}
-
-    /* Awards */
-    .awards-list{display:flex;flex-direction:column;gap:1rem}
-    .award{display:flex;gap:1.25rem;align-items:baseline}
-    .award-year{font-size:.8rem;font-weight:600;color:var(--accent);min-width:3rem;flex-shrink:0}
-    .award-info h3{font-size:.95rem;font-weight:500}
-    .award-info p{font-size:.82rem;color:var(--muted);margin-top:.15rem}
-
-    /* Contact */
-    .contact-section{background:var(--surface);border-top:1px solid var(--border);margin-top:3rem}
-    .contact-inner{max-width:1100px;margin:0 auto;padding:5rem 2rem;text-align:center}
-    .contact-inner .section-title{margin-bottom:1rem}
-    .contact-desc{font-size:1rem;color:var(--muted);margin-bottom:2rem}
-    .contact-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
-    .contact-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:500;color:var(--text);text-decoration:none;padding:.6rem 1.25rem;border:1px solid var(--border);border-radius:8px;transition:border-color .2s,background .2s}
-    .contact-link:hover{border-color:#d4d4d8;background:var(--bg)}
-    .contact-link svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none}
-
-    /* Footer */
-    footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--light);border-top:1px solid var(--border)}
-
-    /* Mobile nav */
-    @media(max-width:768px){
-      .nav-links{position:fixed;top:64px;left:0;right:0;background:rgba(250,250,250,.97);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem 2rem;gap:1.25rem;border-bottom:1px solid var(--border);transform:translateY(-120%);transition:transform .25s ease}
-      .nav-links.open{transform:translateY(0)}
-      .nav-toggle{display:block}
-      .hero{flex-direction:column-reverse;text-align:center;padding-top:8rem;gap:2rem}
-      .hero-name{font-size:2.25rem}
-      .hero-tagline{margin:0 auto}
-      .hero-links{justify-content:center}
-      .hero-photo{width:150px;height:150px}
-      .section{padding:3.5rem 1.5rem}
-      .section-title{font-size:1.6rem}
-      .contact-inner{padding:3.5rem 1.5rem}
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">Ertan Agaoglu</a>
+    <a href="index.html" class="nav-logo">EA</a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
     <ul class="nav-links">
-      <li><a href="#research" onclick="this.closest('.nav-links').classList.remove('open')">Research</a></li>
-      <li><a href="#publications" onclick="this.closest('.nav-links').classList.remove('open')">Publications</a></li>
-      <li><a href="#teaching" onclick="this.closest('.nav-links').classList.remove('open')">Teaching</a></li>
-      <li><a href="#awards" onclick="this.closest('.nav-links').classList.remove('open')">Awards</a></li>
-      <li><a href="#contact" onclick="this.closest('.nav-links').classList.remove('open')">Contact</a></li>
+      <li><a href="index.html" class="active" onclick="this.closest('.nav-links').classList.remove('open')">Home</a></li>
+      <li><a href="research.html" onclick="this.closest('.nav-links').classList.remove('open')">Research</a></li>
+      <li><a href="publications.html" onclick="this.closest('.nav-links').classList.remove('open')">Publications</a></li>
+      <li><a href="teaching.html" onclick="this.closest('.nav-links').classList.remove('open')">Teaching</a></li>
+      <li><a href="contact.html" onclick="this.closest('.nav-links').classList.remove('open')">Contact</a></li>
     </ul>
   </div>
 </nav>
 
+<!-- Hero -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-label">Ph.D. Candidate &middot; University of South Carolina</div>
+    <div class="hero-label"><span class="dot"></span> Ph.D. Candidate &middot; University of South Carolina</div>
     <h1 class="hero-name">Ertan Agaoglu</h1>
     <p class="hero-tagline">Communication researcher exploring how people perceive, trust, and are persuaded by artificial intelligence in health and strategic communication. Driven by the conviction that AI should serve the public good, I study who benefits from these technologies, who gets left behind, and what we can do about it.</p>
     <div class="hero-links">
-      <a href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 7H20v13H6.5A2.5 2.5 0 0 1 4 17.5v-13z"/></svg>
-        Google Scholar
+      <a class="hero-btn primary" href="mailto:eagaoglu@email.sc.edu">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Get in Touch
       </a>
-      <a href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">
-        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-3a2 2 0 1 1 4 0v3"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://sc.edu/study/colleges_schools/cic/academic_programs/phd/mass_communication_phd/doctoral_students/agaoglu_ertan.php" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M2 10l10-7 10 7"/><path d="M4 10v11h16V10"/></svg>
-        USC Profile
-      </a>
+      <a class="hero-btn secondary" href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a class="hero-btn secondary" href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">LinkedIn</a>
     </div>
   </div>
-  <img class="hero-photo" src="https://sc.edu/study/colleges_schools/cic/images/2024-2025/spotlight/phd_students/agaoglu_ertan.png" alt="Ertan Agaoglu">
+  <div class="hero-photo-wrap">
+    <img class="hero-photo" src="https://sc.edu/study/colleges_schools/cic/images/2024-2025/spotlight/phd_students/agaoglu_ertan.png" alt="Ertan Agaoglu">
+  </div>
 </section>
 
-<hr class="divider">
+<!-- Stats -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Publications</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Semesters Teaching</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Awards</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Research Labs</div></div>
+  </div>
+</div>
 
-<section class="section" id="research">
-  <div class="section-label">Research</div>
-  <h2 class="section-title">What I Study</h2>
-  <p class="research-intro">I investigate how people interpret and respond to AI systems and AI-generated content. My work sits at the intersection of communication, technology, and society, using experimental, survey, psychophysiological, computational, and qualitative methods.</p>
+<!-- Research Preview -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-label">Research Focus</div>
+    <h2 class="section-title">What I Study</h2>
+    <p class="section-subtitle">Using experimental, psychophysiological, computational, and qualitative methods to understand AI's role in communication and society.</p>
+  </div>
   <div class="research-areas">
     <div class="area-card">
+      <div class="area-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="var(--accent2)" stroke-width="2" fill="none"><path d="M12 2a4 4 0 0 0-4 4c0 2 2 3 2 6h4c0-3 2-4 2-6a4 4 0 0 0-4-4z"/><path d="M10 18h4"/><path d="M10 22h4"/></svg>
+      </div>
       <h3>AI Trust &amp; Persuasion</h3>
       <p>How explainability and emotional support shape trust in AI health advisors and persuasive technologies.</p>
     </div>
     <div class="area-card">
-      <h3>AI in Health &amp; Strategic Communication</h3>
-      <p>Examining message acceptance, behavioral intentions, and effectiveness of AI-delivered health and advertising messages.</p>
+      <div class="area-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="var(--accent2)" stroke-width="2" fill="none"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      </div>
+      <h3>Health &amp; Strategic Communication</h3>
+      <p>Examining message acceptance, behavioral intentions, and the effectiveness of AI-delivered health and advertising messages.</p>
     </div>
     <div class="area-card">
+      <div class="area-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="var(--accent2)" stroke-width="2" fill="none"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="M11 18H8a2 2 0 0 1-2-2V9"/></svg>
+      </div>
       <h3>Algorithmic Bias &amp; Digital Inequalities</h3>
-      <p>Investigating disparities in AI adoption, skills, and outcomes across gender, age, and demographic groups.</p>
+      <p>Investigating who gets left behind: disparities in AI adoption, skills, and outcomes across demographics.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2.5rem">
+    <a class="hero-btn secondary" href="research.html">Learn more about my research &rarr;</a>
+  </div>
+</section>
+
+<!-- Labs Preview -->
+<section class="labs-section">
+  <div class="labs-inner">
+    <div class="section-header">
+      <div class="section-label">Labs &amp; Projects</div>
+      <h2 class="section-title">Where I Work</h2>
+    </div>
+    <div class="labs-grid">
+      <div class="lab-card">
+        <div class="lab-tag">Lab Coordinator</div>
+        <h3>USC Biometrics &amp; User Experience Lab</h3>
+        <p>Coordinating lab operations and training researchers in biometric methods including eye tracking, GSR, EEG, and EMG.</p>
+      </div>
+      <div class="lab-card">
+        <div class="lab-tag">Lab Analyst</div>
+        <h3>USC Social Media Insights Lab</h3>
+        <p>Producing social media analytics reports for external clients and contributing to College Sports Social Pulse.</p>
+        <a class="lab-link" href="https://collegesportssocialpulse.com" target="_blank">
+          College Sports Social Pulse
+          <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <div class="lab-card">
+        <div class="lab-tag">Research Assistant</div>
+        <h3>USC Aspire AI &mdash; STEM Camp</h3>
+        <p>Conducting qualitative research with participants in an integrative biomedical summer camp focused on AI and STEM.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<hr class="divider">
-
-<section class="section" id="publications">
-  <div class="section-label">Publications</div>
-  <h2 class="section-title">Selected Works</h2>
+<!-- Recent Work -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-label">Recent Work</div>
+    <h2 class="section-title">Latest Publications</h2>
+  </div>
   <div class="pub-list">
-
     <div class="pub">
       <div class="pub-meta">
         <span class="pub-type">Journal Article</span>
@@ -195,7 +139,6 @@
       <div class="pub-authors">Long, J., Xiao, J., McCray, S., <strong>Agaoglu, E.</strong>, Al-Ajmi, A., Akalonu, C., &amp; Xu, Y.</div>
       <div class="pub-venue">Cyberpsychology: Journal of Psychosocial Research on Cyberspace, 20(4)</div>
     </div>
-
     <div class="pub">
       <div class="pub-meta">
         <span class="pub-type">Book Chapter</span>
@@ -205,122 +148,19 @@
       <div class="pub-authors">Wu, L., <strong>Agaoglu, E.</strong>, &amp; Sun, Y.</div>
       <div class="pub-venue">Handbook of Innovations in Strategic Communication</div>
     </div>
-
-    <div class="pub">
-      <div class="pub-meta">
-        <span class="pub-type">Conference</span>
-        <span class="pub-year">2026</span>
-      </div>
-      <div class="pub-title">The AI divide: How gender shapes attitudes and skills toward generative AI</div>
-      <div class="pub-authors"><strong>Agaoglu, E.</strong>, &amp; Al-Ajmi, A.</div>
-      <div class="pub-venue">109th Annual AEJMC Conference, New Orleans, LA</div>
-    </div>
-
-    <div class="pub">
-      <div class="pub-meta">
-        <span class="pub-type">Conference</span>
-        <span class="pub-year">2024</span>
-      </div>
-      <div class="pub-title">AI chatbots for emotional support: Chatbot agency locus and user prior experience</div>
-      <div class="pub-authors">Wu, L., &amp; <strong>Agaoglu, E.</strong></div>
-      <div class="pub-venue">74th Annual ICA Conference, Gold Coast, Australia</div>
-    </div>
-
+  </div>
+  <div style="text-align:center;margin-top:2.5rem">
+    <a class="hero-btn secondary" href="publications.html">View all publications &rarr;</a>
   </div>
 </section>
 
-<hr class="divider">
-
-<section class="section" id="teaching">
-  <div class="section-label">Teaching</div>
-  <h2 class="section-title">Courses</h2>
-  <div class="teaching-grid">
-    <div class="course">
-      <div class="course-code">JOUR 312 / 504</div>
-      <div class="course-name">International Mass Communications</div>
-      <div class="course-detail">Instructor of Record &middot; Spring 25, Fall 25, Spring 26, Fall 26</div>
-    </div>
-    <div class="course">
-      <div class="course-code">JOUR 306</div>
-      <div class="course-name">Theories of Mass Communications</div>
-      <div class="course-detail">Instructor of Record &middot; Spring 24, Fall 24</div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<section class="section" id="awards">
-  <div class="section-label">Recognition</div>
-  <h2 class="section-title">Awards &amp; Grants</h2>
-  <div class="awards-list">
-    <div class="award">
-      <span class="award-year">2026</span>
-      <div class="award-info">
-        <h3>Bryce Rucker Graduate Student Excellence in Research Award</h3>
-        <p>In recognition of research work conducted as a graduate student</p>
-      </div>
-    </div>
-    <div class="award">
-      <span class="award-year">2026</span>
-      <div class="award-info">
-        <h3>USC Libraries Data Visualization Award &mdash; First Place</h3>
-        <p>In recognition of excellence in data visualization</p>
-      </div>
-    </div>
-    <div class="award">
-      <span class="award-year">2026</span>
-      <div class="award-info">
-        <h3>International Student Excellence Scholarship</h3>
-        <p>Academic excellence, community engagement, and leadership</p>
-      </div>
-    </div>
-    <div class="award">
-      <span class="award-year">2025</span>
-      <div class="award-info">
-        <h3>SJMC Graduate Student Excellence in Teaching Award</h3>
-        <p>Outstanding teaching contributions</p>
-      </div>
-    </div>
-    <div class="award">
-      <span class="award-year">2024</span>
-      <div class="award-info">
-        <h3>Internal Funding Program &mdash; Principal Investigator</h3>
-        <p>Student-track grant for research on artificial intelligence</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact-section" id="contact">
-  <div class="contact-inner">
-    <div class="section-label">Get in Touch</div>
-    <h2 class="section-title">Contact</h2>
-    <p class="contact-desc">I'm always open to discussing research collaborations, teaching opportunities, or anything AI and communication.</p>
-    <div class="contact-links">
-      <a class="contact-link" href="mailto:eagaoglu@email.sc.edu">
-        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        eagaoglu@email.sc.edu
-      </a>
-      <a class="contact-link" href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 7H20v13H6.5A2.5 2.5 0 0 1 4 17.5v-13z"/></svg>
-        Google Scholar
-      </a>
-      <a class="contact-link" href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">
-        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-3a2 2 0 1 1 4 0v3"/></svg>
-        LinkedIn
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  &copy; 2026 Ertan Agaoglu. University of South Carolina.
-</footer>
+<footer>&copy; 2026 Ertan Agaoglu &middot; University of South Carolina</footer>
 
 <script>
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10)
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10)})
+document.querySelectorAll('.area-card,.lab-card,.pub,.stat').forEach(el=>{
+  const obs=new IntersectionObserver(([e])=>{if(e.isIntersecting){el.style.opacity='1';el.style.transform='translateY(0)';obs.unobserve(el)}},{threshold:.1})
+  el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease, transform .5s ease';obs.observe(el)
 })
 </script>
 </body>
