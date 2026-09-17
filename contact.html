@@ -6,56 +6,55 @@
   <title>Contact | Ertan Agaoglu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav id="nav">
+<nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">EA</a>
+    <a href="index.html" class="nav-logo">Ertan Agaoglu</a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html" onclick="this.closest('.nav-links').classList.remove('open')">Home</a></li>
-      <li><a href="research.html" onclick="this.closest('.nav-links').classList.remove('open')">Research</a></li>
-      <li><a href="publications.html" onclick="this.closest('.nav-links').classList.remove('open')">Publications</a></li>
-      <li><a href="teaching.html" onclick="this.closest('.nav-links').classList.remove('open')">Teaching</a></li>
-      <li><a href="contact.html" class="active" onclick="this.closest('.nav-links').classList.remove('open')">Contact</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="page-header">
-  <div class="section-label">Contact</div>
+  <span class="overline">Contact</span>
   <h1>Get in Touch</h1>
   <p>Open to research collaborations, teaching opportunities, and conversations about AI and communication.</p>
 </div>
 
 <section class="section" style="padding-top:2rem">
-  <div class="contact-links" style="display:flex;flex-direction:column;gap:1rem;max-width:500px">
-    <a class="contact-link" href="mailto:eagaoglu@email.sc.edu" style="justify-content:flex-start">
-      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+  <div class="contact-links">
+    <a class="contact-link" href="mailto:eagaoglu@email.sc.edu">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
       eagaoglu@email.sc.edu
     </a>
-    <a class="contact-link" href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank" style="justify-content:flex-start">
-      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 7H20v13H6.5A2.5 2.5 0 0 1 4 17.5v-13z"/></svg>
+    <a class="contact-link" href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 7H20v13H6.5A2.5 2.5 0 0 1 4 17.5v-13z"/></svg>
       Google Scholar
     </a>
-    <a class="contact-link" href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank" style="justify-content:flex-start">
-      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-3a2 2 0 1 1 4 0v3"/></svg>
+    <a class="contact-link" href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">
+      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-3a2 2 0 1 1 4 0v3"/></svg>
       LinkedIn
     </a>
-    <a class="contact-link" href="https://sc.edu/study/colleges_schools/cic/academic_programs/phd/mass_communication_phd/doctoral_students/agaoglu_ertan.php" target="_blank" style="justify-content:flex-start">
-      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M2 10l10-7 10 7"/><path d="M4 10v11h16V10"/></svg>
+    <a class="contact-link" href="https://sc.edu/study/colleges_schools/cic/academic_programs/phd/mass_communication_phd/doctoral_students/agaoglu_ertan.php" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M2 10l10-7 10 7"/><path d="M4 10v11h16V10"/></svg>
       USC Profile
     </a>
   </div>
 
-  <div style="margin-top:3rem;padding:2rem;border:1px solid var(--border);border-radius:14px;background:var(--bg-elevated);max-width:500px">
-    <h3 style="font-size:1rem;font-weight:500;margin-bottom:.5rem">Mailing Address</h3>
-    <p style="font-size:.9rem;color:var(--text-secondary);line-height:1.8">
+  <div style="margin-top:3rem;padding:2rem;border:1px solid var(--border);border-radius:8px;max-width:500px">
+    <h3 style="font-family:var(--serif);font-size:1.1rem;font-weight:400;margin-bottom:.75rem">Mailing Address</h3>
+    <p style="font-size:.9rem;color:var(--text2);line-height:1.8">
       School of Journalism and Mass Communications<br>
       University of South Carolina<br>
       Columbia, SC
@@ -63,10 +62,19 @@
   </div>
 </section>
 
-<footer>&copy; 2026 Ertan Agaoglu &middot; University of South Carolina</footer>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">LinkedIn</a>
+      <a href="mailto:eagaoglu@email.sc.edu">Email</a>
+    </div>
+    <p>&copy; 2026 Ertan Agaoglu</p>
+  </div>
+</footer>
 
 <script>
-window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10)})
+window.addEventListener('scroll',()=>{document.querySelector('nav').classList.toggle('scrolled',window.scrollY>50)})
 </script>
 </body>
 </html>

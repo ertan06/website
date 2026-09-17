@@ -6,152 +6,151 @@
   <title>Ertan Agaoglu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav id="nav">
+<nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">EA</a>
+    <a href="index.html" class="nav-logo">Ertan Agaoglu</a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html" class="active" onclick="this.closest('.nav-links').classList.remove('open')">Home</a></li>
-      <li><a href="research.html" onclick="this.closest('.nav-links').classList.remove('open')">Research</a></li>
-      <li><a href="publications.html" onclick="this.closest('.nav-links').classList.remove('open')">Publications</a></li>
-      <li><a href="teaching.html" onclick="this.closest('.nav-links').classList.remove('open')">Teaching</a></li>
-      <li><a href="contact.html" onclick="this.closest('.nav-links').classList.remove('open')">Contact</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- Hero -->
 <section class="hero">
-  <div class="hero-text">
-    <div class="hero-label"><span class="dot"></span> Ph.D. Candidate &middot; University of South Carolina</div>
-    <h1 class="hero-name">Ertan Agaoglu</h1>
-    <p class="hero-tagline">Communication researcher exploring how people perceive, trust, and are persuaded by artificial intelligence in health and strategic communication. Driven by the conviction that AI should serve the public good, I study who benefits from these technologies, who gets left behind, and what we can do about it.</p>
-    <div class="hero-links">
-      <a class="hero-btn primary" href="mailto:eagaoglu@email.sc.edu">
-        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        Get in Touch
-      </a>
-      <a class="hero-btn secondary" href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">Google Scholar</a>
-      <a class="hero-btn secondary" href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">LinkedIn</a>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-name">Ertan<br>Agaoglu</h1>
+      <p class="hero-roles">Researcher / Educator / AI Enthusiast</p>
+      <p class="hero-desc">Communication researcher exploring how people perceive, trust, and are persuaded by artificial intelligence. Driven by the conviction that AI should serve the public good, I study who benefits from these technologies, who gets left behind, and what we can do about it.</p>
+      <div class="hero-cta">
+        <a href="research.html" class="btn-primary">View My Research</a>
+        <a href="contact.html" class="btn-outline">Get in Touch</a>
+      </div>
     </div>
-  </div>
-  <div class="hero-photo-wrap">
-    <img class="hero-photo" src="https://sc.edu/study/colleges_schools/cic/images/2024-2025/spotlight/phd_students/agaoglu_ertan.png" alt="Ertan Agaoglu">
+    <div class="hero-image">
+      <img src="https://sc.edu/study/colleges_schools/cic/images/2024-2025/spotlight/phd_students/agaoglu_ertan.png" alt="Ertan Agaoglu">
+    </div>
   </div>
 </section>
 
+<section class="info-bar">
+  <div class="info-inner">
+    <div class="info-item">
+      <span class="info-label">Position</span>
+      <span class="info-value">Ph.D. Candidate</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">University</span>
+      <span class="info-value">University of South Carolina</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">Department</span>
+      <span class="info-value">Journalism &amp; Mass Communications</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">Focus</span>
+      <span class="info-value">AI, Trust &amp; Persuasion</span>
+    </div>
+  </div>
+</section>
 
-<!-- Research Preview -->
+<section class="section" id="about">
+  <div class="two-col">
+    <div class="col-left">
+      <span class="overline">About</span>
+      <h2>At the intersection of<br><em>communication</em> &amp; <em>AI</em></h2>
+    </div>
+    <div class="col-right">
+      <p>My research examines how people interpret and respond to AI systems and AI-generated content, with particular attention to trust, persuasion, message acceptance, and behavioral intentions in strategic and health communication.</p>
+      <p>I also investigate AI's broader societal consequences, including algorithmic bias and inequalities in AI adoption and skills across demographic groups, using experimental, survey, psychophysiological, computational, and qualitative methods.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section labs-section">
+  <span class="overline">Labs &amp; Projects</span>
+  <h2>Where I Work</h2>
+  <div class="labs-grid">
+    <div class="lab-card">
+      <span class="lab-role">Lab Coordinator</span>
+      <h3>USC Biometrics &amp; User Experience Lab</h3>
+      <p>Eye tracking, GSR, EEG, EMG. Training researchers in biometric methods and supporting campaign effectiveness testing.</p>
+    </div>
+    <div class="lab-card">
+      <span class="lab-role">Lab Analyst</span>
+      <h3>USC Social Media Insights Lab</h3>
+      <p>Social media analytics for clients like Nephron Pharmaceuticals. Co-built College Sports Social Pulse, licensed to Fox Sports.</p>
+      <a href="https://collegesportssocialpulse.com" target="_blank" class="card-link">collegesportssocialpulse.com &rarr;</a>
+    </div>
+    <div class="lab-card">
+      <span class="lab-role">Research Assistant</span>
+      <h3>USC Aspire AI &mdash; STEM Camp</h3>
+      <p>Qualitative research with middle school participants in an integrative biomedical summer camp.</p>
+    </div>
+  </div>
+</section>
+
 <section class="section">
-  <div class="section-header">
-    <div class="section-label">Research Focus</div>
-    <h2 class="section-title">What I Study</h2>
-    <p class="section-subtitle">Using experimental, psychophysiological, computational, and qualitative methods to understand AI's role in communication and society.</p>
-  </div>
-  <div class="research-areas">
-    <div class="area-card">
-      <div class="area-icon">
-        <svg viewBox="0 0 24 24" width="20" height="20" stroke="var(--accent2)" stroke-width="2" fill="none"><path d="M12 2a4 4 0 0 0-4 4c0 2 2 3 2 6h4c0-3 2-4 2-6a4 4 0 0 0-4-4z"/><path d="M10 18h4"/><path d="M10 22h4"/></svg>
-      </div>
-      <h3>AI Trust &amp; Persuasion</h3>
-      <p>How explainability and emotional support shape trust in AI health advisors and persuasive technologies.</p>
-    </div>
-    <div class="area-card">
-      <div class="area-icon">
-        <svg viewBox="0 0 24 24" width="20" height="20" stroke="var(--accent2)" stroke-width="2" fill="none"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-      </div>
-      <h3>Health &amp; Strategic Communication</h3>
-      <p>Examining message acceptance, behavioral intentions, and the effectiveness of AI-delivered health and advertising messages.</p>
-    </div>
-    <div class="area-card">
-      <div class="area-icon">
-        <svg viewBox="0 0 24 24" width="20" height="20" stroke="var(--accent2)" stroke-width="2" fill="none"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="M11 18H8a2 2 0 0 1-2-2V9"/></svg>
-      </div>
-      <h3>Algorithmic Bias &amp; Digital Inequalities</h3>
-      <p>Investigating who gets left behind: disparities in AI adoption, skills, and outcomes across demographics.</p>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:2.5rem">
-    <a class="hero-btn secondary" href="research.html">Learn more about my research &rarr;</a>
-  </div>
-</section>
-
-<!-- Labs Preview -->
-<section class="labs-section">
-  <div class="labs-inner">
-    <div class="section-header">
-      <div class="section-label">Labs &amp; Projects</div>
-      <h2 class="section-title">Where I Work</h2>
-    </div>
-    <div class="labs-grid">
-      <div class="lab-card">
-        <div class="lab-tag">Lab Coordinator</div>
-        <h3>USC Biometrics &amp; User Experience Lab</h3>
-        <p>Coordinating lab operations and training researchers in biometric methods including eye tracking, GSR, EEG, and EMG.</p>
-      </div>
-      <div class="lab-card">
-        <div class="lab-tag">Lab Analyst</div>
-        <h3>USC Social Media Insights Lab</h3>
-        <p>Producing social media analytics reports for external clients and contributing to College Sports Social Pulse.</p>
-        <a class="lab-link" href="https://collegesportssocialpulse.com" target="_blank">
-          College Sports Social Pulse
-          <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-        </a>
-      </div>
-      <div class="lab-card">
-        <div class="lab-tag">Research Assistant</div>
-        <h3>USC Aspire AI &mdash; STEM Camp</h3>
-        <p>Conducting qualitative research with participants in an integrative biomedical summer camp focused on AI and STEM.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Recent Work -->
-<section class="section">
-  <div class="section-header">
-    <div class="section-label">Recent Work</div>
-    <h2 class="section-title">Latest Publications</h2>
-  </div>
+  <span class="overline">Selected Work</span>
+  <h2>Recent Publications</h2>
   <div class="pub-list">
-    <div class="pub">
-      <div class="pub-meta">
-        <span class="pub-type">Journal Article</span>
-        <span class="pub-year">2026</span>
-      </div>
-      <div class="pub-title">Perceptions of AI-generated profile pictures: Effects on quality, attractiveness, and trustworthiness</div>
-      <div class="pub-authors">Long, J., Xiao, J., McCray, S., <strong>Agaoglu, E.</strong>, Al-Ajmi, A., Akalonu, C., &amp; Xu, Y.</div>
-      <div class="pub-venue">Cyberpsychology: Journal of Psychosocial Research on Cyberspace, 20(4)</div>
-    </div>
-    <div class="pub">
-      <div class="pub-meta">
-        <span class="pub-type">Book Chapter</span>
-        <span class="pub-year">2025</span>
-      </div>
-      <div class="pub-title">Artificial intelligence in advertising: Unveiling challenges and opportunities via the consumer's lens</div>
-      <div class="pub-authors">Wu, L., <strong>Agaoglu, E.</strong>, &amp; Sun, Y.</div>
-      <div class="pub-venue">Handbook of Innovations in Strategic Communication</div>
-    </div>
+    <a class="pub-row" href="https://doi.org/10.5817/CP2026-4-3" target="_blank">
+      <span class="pub-year">2026</span>
+      <span class="pub-title">Perceptions of AI-generated profile pictures: Effects on quality, attractiveness, and trustworthiness</span>
+      <span class="pub-venue">Cyberpsychology</span>
+      <span class="pub-arrow">&rarr;</span>
+    </a>
+    <a class="pub-row" href="publications.html">
+      <span class="pub-year">2025</span>
+      <span class="pub-title">Artificial intelligence in advertising: Unveiling challenges and opportunities via the consumer's lens</span>
+      <span class="pub-venue">Handbook of Innovations in Strategic Communication</span>
+      <span class="pub-arrow">&rarr;</span>
+    </a>
+    <a class="pub-row" href="publications.html">
+      <span class="pub-year">2026</span>
+      <span class="pub-title">The AI divide: How gender shapes attitudes and skills toward generative AI</span>
+      <span class="pub-venue">AEJMC Conference</span>
+      <span class="pub-arrow">&rarr;</span>
+    </a>
   </div>
-  <div style="text-align:center;margin-top:2.5rem">
-    <a class="hero-btn secondary" href="publications.html">View all publications &rarr;</a>
+  <div style="margin-top:2rem">
+    <a href="publications.html" class="btn-outline">All Publications &rarr;</a>
   </div>
 </section>
 
-<footer>&copy; 2026 Ertan Agaoglu &middot; University of South Carolina</footer>
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Interested in collaborating?</h2>
+    <p>I'm always open to research collaborations, teaching opportunities, and conversations about AI and communication.</p>
+    <a href="mailto:eagaoglu@email.sc.edu" class="btn-primary">eagaoglu@email.sc.edu</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">LinkedIn</a>
+      <a href="https://sc.edu/study/colleges_schools/cic/academic_programs/phd/mass_communication_phd/doctoral_students/agaoglu_ertan.php" target="_blank">USC Profile</a>
+      <a href="mailto:eagaoglu@email.sc.edu">Email</a>
+    </div>
+    <p>&copy; 2026 Ertan Agaoglu</p>
+  </div>
+</footer>
 
 <script>
-window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10)})
-document.querySelectorAll('.area-card,.lab-card,.pub,.stat').forEach(el=>{
-  const obs=new IntersectionObserver(([e])=>{if(e.isIntersecting){el.style.opacity='1';el.style.transform='translateY(0)';obs.unobserve(el)}},{threshold:.1})
-  el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease, transform .5s ease';obs.observe(el)
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').classList.toggle('scrolled',window.scrollY>50)
 })
 </script>
 </body>
