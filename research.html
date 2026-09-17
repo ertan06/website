@@ -9,21 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .research-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;padding:0 3rem;background:#c8cfd6}
-    .research-hero .hero-content{max-width:1400px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding:6rem 0 4rem}
-    .research-hero .hero-image img{width:100%;max-width:1260px;border-radius:0}
-    .research-hero .hero-name,.research-hero .hero-desc,.research-hero .overline{color:#1a1f25}
-    .research-hero .hero-text{padding-right:2rem}
-    .scroll-arrow{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;cursor:pointer;text-decoration:none;color:var(--muted)}
+    .research-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:0 3rem;background:url('55248526098_f4b2d7864c_o.jpg') center/cover no-repeat}
+    .research-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.1) 100%)}
+    .research-hero .hero-content{position:relative;z-index:1;max-width:1400px;margin:0 auto;width:100%;padding:0 0 6rem}
+    .research-hero .hero-name,.research-hero .hero-desc,.research-hero .overline{color:#fff}
+    .research-hero .hero-desc{font-size:1.15rem;line-height:1.8;max-width:620px}
+    .scroll-arrow{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;cursor:pointer;text-decoration:none;color:rgba(255,255,255,.7);z-index:1}
     .scroll-arrow span{font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
-    .scroll-arrow svg{width:24px;height:24px;stroke:var(--muted);stroke-width:2;fill:none;animation:bounce 2s infinite}
+    .scroll-arrow svg{width:24px;height:24px;stroke:rgba(255,255,255,.7);stroke-width:2;fill:none;animation:bounce 2s infinite}
     @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(8px)}60%{transform:translateY(4px)}}
     @media(max-width:900px){
       .research-hero{padding:0 1.5rem;min-height:100vh}
-      .research-hero .hero-content{grid-template-columns:1fr;padding:8rem 0 3rem;gap:2rem}
-      .research-hero .hero-text{padding-right:0;order:2}
-      .research-hero .hero-image{order:1}
-      .research-hero .hero-image img{max-width:280px;margin:0 auto}
+      .research-hero .hero-content{padding:0 0 5rem}
       .research-hero .hero-name{font-size:3rem}
     }
   </style>
@@ -47,14 +44,9 @@
 
 <section class="research-hero">
   <div class="hero-content">
-    <div class="hero-text">
-      <span class="overline">Research</span>
-      <h1 class="hero-name" style="font-size:5.5rem;margin-bottom:1.5rem;line-height:1">Technologies<br>Should Benefit<br><em>Everybody</em></h1>
-      <p class="hero-desc" style="font-size:1.15rem;line-height:1.8;max-width:520px"><strong>Technology should serve everyone</strong>, and that begins with understanding it. I study how humans communicate with artificial intelligence and how to harness it for positive behavior change, without losing sight of who it empowers and who it leaves behind.</p>
-    </div>
-    <div class="hero-image">
-      <img src="55248526098_f4b2d7864c_o.jpg" alt="Ertan Ağaoğlu in the Biometrics Lab">
-    </div>
+    <span class="overline">Research</span>
+    <h1 class="hero-name" style="font-size:5.5rem;margin-bottom:1.5rem;line-height:1">Technologies<br>Should Benefit<br><em>Everybody</em></h1>
+    <p class="hero-desc"><strong>Technology should serve everyone</strong>, and that begins with understanding it. I study how humans communicate with artificial intelligence and how to harness it for positive behavior change, without losing sight of who it empowers and who it leaves behind.</p>
   </div>
   <a href="#content" class="scroll-arrow">
     <span>Scroll</span>
