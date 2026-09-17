@@ -92,6 +92,12 @@ nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit
 .pub-venue{font-size:.8rem;color:var(--muted);font-style:italic;text-align:right}
 .pub-arrow{font-size:1.1rem;color:var(--muted);transition:transform .2s}
 .pub-row:hover .pub-arrow{transform:translateX(4px);color:var(--text)}
+.pub-row-detail{display:grid;grid-template-columns:60px 1fr;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);transition:background .2s}
+.pub-row-detail:hover{background:var(--bg2);padding-left:1rem;padding-right:1rem;margin-left:-1rem;margin-right:-1rem;border-radius:6px}
+.pub-row-detail .pub-meta{display:flex;flex-direction:column;gap:.35rem}
+.pub-row-detail .pub-title{font-size:.95rem;font-weight:500;line-height:1.5}
+.pub-row-detail .pub-authors{font-size:.82rem;color:var(--text2);line-height:1.6}
+.pub-row-detail .pub-venue-line{font-size:.8rem;color:var(--muted);font-style:italic}
 
 /* CTA */
 .cta-section{background:var(--accent);color:#fff;text-align:center;padding:5rem 3rem}
@@ -178,6 +184,7 @@ footer p{font-size:.75rem;color:var(--muted)}
   .labs-grid{grid-template-columns:1fr}
   .pub-row{grid-template-columns:50px 1fr 30px;gap:1rem}
   .pub-venue{display:none}
+  .pub-row-detail{grid-template-columns:50px 1fr;gap:1rem}
   .cta-section{padding:4rem 1.5rem}
   footer{padding:2rem 1.5rem}
   .footer-inner{flex-direction:column;gap:1rem;text-align:center}
