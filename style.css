@@ -34,8 +34,8 @@ nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit
 .hero-desc{font-size:1.05rem;line-height:1.8;color:var(--text2);max-width:480px;font-weight:300}
 .hero-cta{display:flex;gap:1rem;margin-top:2.5rem}
 .hero-image{position:relative;display:flex;flex-direction:column;align-items:center}
-.hero-image img{width:100%;max-width:480px;height:auto;object-fit:cover;border-radius:24px}
-.hero-icons{display:flex;justify-content:center;gap:1.25rem;margin-top:1.25rem}
+.hero-image img{width:100%;max-width:480px;height:auto;object-fit:cover;border-radius:20px 20px 0 0}
+.hero-icons{display:flex;justify-content:center;gap:1.25rem;padding:1rem 0;background:var(--bg);border:1px solid var(--border);border-top:none;border-radius:0 0 20px 20px;width:100%;max-width:480px}
 .hero-icons a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--bg);transition:all .3s}
 .hero-icons a:hover{border-color:var(--accent);background:var(--accent)}
 .hero-icons a:hover svg{fill:var(--bg);stroke:var(--bg)}
