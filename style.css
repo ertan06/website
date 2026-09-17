@@ -149,6 +149,14 @@ footer p{font-size:.75rem;color:var(--muted)}
 .ta-hidden{max-height:0;overflow:hidden;opacity:0;transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .4s ease,margin .4s ease;margin-top:0}
 .ta-hidden.open{max-height:600px;opacity:1;margin-top:1.25rem}
 
+/* Scroll Reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}}
+
 /* Mobile */
 @media(max-width:900px){
   nav{padding:0 1.5rem}

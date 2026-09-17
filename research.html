@@ -44,17 +44,17 @@
     <h2>Research Areas</h2>
   </div>
   <div class="labs-grid" style="margin-top:2rem">
-    <div class="lab-card">
+    <div class="lab-card reveal">
       <span class="lab-role">Focus Area</span>
       <h3>AI Trust &amp; Persuasion</h3>
       <p>How explainability and emotional support shape trust in AI health advisors and persuasive technologies. My dissertation investigates building trust in AI health advisors through explainability and emotional support under Dr. Linwan Wu.</p>
     </div>
-    <div class="lab-card">
+    <div class="lab-card reveal reveal-delay-1">
       <span class="lab-role">Focus Area</span>
       <h3>Health &amp; Strategic Communication</h3>
       <p>Examining message acceptance, behavioral intentions, and the effectiveness of AI-delivered health promotion and advertising messages. How conversational AI agents can promote health behaviors.</p>
     </div>
-    <div class="lab-card">
+    <div class="lab-card reveal reveal-delay-2">
       <span class="lab-role">Focus Area</span>
       <h3>Algorithmic Bias &amp; Digital Inequalities</h3>
       <p>Investigating who gets left behind: disparities in AI adoption, algorithmic skills, and outcomes across gender, age, and demographic groups.</p>
@@ -66,18 +66,18 @@
   <span class="overline">Labs &amp; Projects</span>
   <h2>Where I Work</h2>
   <div class="labs-grid">
-    <div class="lab-card">
+    <div class="lab-card reveal">
       <span class="lab-role">Lab Coordinator &middot; 2025 &ndash; 2026</span>
       <h3>USC Biometrics &amp; User Experience Lab</h3>
       <p>Coordinating lab scheduling and equipment operations. Training students and researchers in biometric methods including eye tracking, GSR, EEG, and EMG. Supporting campaign effectiveness testing for strategic communication courses and USC's NSAC team.</p>
     </div>
-    <div class="lab-card">
+    <div class="lab-card reveal reveal-delay-1">
       <span class="lab-role">Lab Analyst &middot; Summers 2023 &ndash; 2026</span>
       <h3>USC Social Media Insights Lab</h3>
       <p>Producing social media analytics reports for clients including Nephron Pharmaceuticals and Chernoff Newman. Contributing to the methodology and software behind College Sports Social Pulse, featured in Sports Business Journal.</p>
       <a class="card-link" href="https://collegesportssocialpulse.com" target="_blank">collegesportssocialpulse.com &rarr;</a>
     </div>
-    <div class="lab-card">
+    <div class="lab-card reveal reveal-delay-2">
       <span class="lab-role">Research Assistant &middot; Summer 2026</span>
       <h3>USC Aspire AI &mdash; STEM Camp</h3>
       <p>Conducting in-depth interviews with middle school participants and analyzing qualitative data for program evaluation research at the intersection of AI and STEM education.</p>
@@ -116,7 +116,9 @@
 </footer>
 
 <script>
-window.addEventListener('scroll',()=>{document.querySelector('nav').classList.toggle('scrolled',window.scrollY>50)})
+window.addEventListener('scroll',()=>{document.querySelector('nav').classList.toggle('scrolled',window.scrollY>50)});
+const o=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
 </script>
 </body>
 </html>
