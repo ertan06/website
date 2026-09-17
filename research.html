@@ -4,19 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research | Ertan Ağaoğlu</title>
+  <meta name="description" content="Research portfolio of Ertan Ağaoğlu: Human-AI interaction, AI trust, persuasion in strategic and health communication, and algorithmic inequalities.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ertan Ağaoğlu">
+  <meta property="og:title" content="Research | Ertan Ağaoğlu">
+  <meta property="og:description" content="Research portfolio of Ertan Ağaoğlu: Human-AI interaction, AI trust, persuasion, and algorithmic inequalities.">
+  <meta property="og:url" content="https://ertanagaoglu.com/research.html">
+  <meta property="og:image" content="https://ertanagaoglu.com/agaoglu_ertan.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ertanagaoglu">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .research-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:0 3rem;background:url('55248526098_f4b2d7864c_o.jpg') center/cover no-repeat}
-    .research-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.3) 40%,rgba(0,0,0,.05) 100%)}
-    .research-hero .hero-content{position:relative;z-index:1;max-width:1400px;margin:0 auto;width:100%;padding:0 0 5rem}
-    .research-hero .hero-name,.research-hero .hero-desc,.research-hero .overline{color:#fff}
-    .research-hero .hero-desc{font-size:1.05rem;line-height:1.8;max-width:540px}
-    .scroll-arrow{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;cursor:pointer;text-decoration:none;color:rgba(255,255,255,.7);z-index:1}
+    .research-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:0 3rem;background:url('55248526098_f4b2d7864c_o.webp') center/cover no-repeat;background-image:image-set(url('55248526098_f4b2d7864c_o.webp') type('image/webp'), url('55248526098_f4b2d7864c_o_opt.jpg') type('image/jpeg'))}
+    .research-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.8) 0%,rgba(0,0,0,.45) 50%,rgba(0,0,0,.15) 100%),linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 60%),linear-gradient(to bottom,rgba(0,0,0,.45) 0%,transparent 30%)}
+    .research-hero .hero-content{position:relative;z-index:1;max-width:1400px;margin:0 auto;width:100%;padding:0 0 5rem;display:block}
+    .research-hero .hero-text{max-width:620px;padding-right:0}
+    .research-hero .hero-name{font-size:4.5rem;line-height:1.05;margin-bottom:1.25rem;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+    .research-hero .hero-desc{font-size:1.05rem;line-height:1.8;max-width:560px;color:rgba(255,255,255,.92);text-shadow:0 1px 4px rgba(0,0,0,.4);font-weight:300}
+    .research-hero .overline{display:inline-block;color:#a8c7fa;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem;font-weight:600}
+    nav:not(.scrolled) .nav-logo{color:#fff}
+    nav:not(.scrolled) .nav-links a{color:rgba(255,255,255,.85)}
+    nav:not(.scrolled) .nav-links a:hover,nav:not(.scrolled) .nav-links a.active{color:#fff}
+    nav:not(.scrolled) .nav-toggle svg{stroke:#fff}
+    .scroll-arrow{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;cursor:pointer;text-decoration:none;color:rgba(255,255,255,.8);z-index:1}
     .scroll-arrow span{font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
-    .scroll-arrow svg{width:24px;height:24px;stroke:rgba(255,255,255,.7);stroke-width:2;fill:none;animation:bounce 2s infinite}
+    .scroll-arrow svg{width:24px;height:24px;stroke:rgba(255,255,255,.8);stroke-width:2;fill:none;animation:bounce 2s infinite}
     @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(8px)}60%{transform:translateY(4px)}}
     @media(max-width:900px){
       .research-hero{padding:0 1.5rem;min-height:100vh}
@@ -44,9 +63,11 @@
 
 <section class="research-hero">
   <div class="hero-content">
-    <span class="overline">Research</span>
-    <h1 class="hero-name" style="font-size:5.5rem;margin-bottom:1.5rem;line-height:1">Technologies<br>Should Benefit<br><em>Everybody</em></h1>
-    <p class="hero-desc"><strong>Technology should serve everyone</strong>, and that begins with understanding it. I study how humans communicate with artificial intelligence and how to harness it for positive behavior change, without losing sight of who it empowers and who it leaves behind.</p>
+    <div class="hero-text">
+      <span class="overline">Research</span>
+      <h1 class="hero-name">Technologies<br>Should Benefit<br><em>Everybody</em></h1>
+      <p class="hero-desc"><strong>Technology should serve everyone</strong>, and that begins with understanding it. I study how humans communicate with artificial intelligence and how to harness it for positive behavior change, without losing sight of who it empowers and who it leaves behind.</p>
+    </div>
   </div>
   <a href="#content" class="scroll-arrow">
     <span>Scroll</span>
@@ -82,13 +103,13 @@
   <span class="overline">Selected Work</span>
   <h2>Recent Publications</h2>
   <div class="pub-list reveal">
-    <a class="pub-row" href="https://doi.org/10.5817/CP2026-4-3" target="_blank">
+    <a class="pub-row" href="https://doi.org/10.5817/CP2026-4-3" target="_blank" rel="noopener noreferrer">
       <span class="pub-year">2026</span>
       <span class="pub-title">Perceptions of AI-generated profile pictures: Effects on quality, attractiveness, and trustworthiness</span>
       <span class="pub-venue">Cyberpsychology</span>
       <span class="pub-arrow">&rarr;</span>
     </a>
-    <a class="pub-row" href="https://www.e-elgar.com/shop/gbp/handbook-of-innovations-in-strategic-communication-9781035326471.html" target="_blank">
+    <a class="pub-row" href="https://www.e-elgar.com/shop/gbp/handbook-of-innovations-in-strategic-communication-9781035326471.html" target="_blank" rel="noopener noreferrer">
       <span class="pub-year">2025</span>
       <span class="pub-title">Artificial intelligence in advertising: Unveiling challenges and opportunities via the consumer's lens</span>
       <span class="pub-venue">Handbook of Innovations in Strategic Communication</span>
@@ -119,7 +140,7 @@
       <span class="lab-role">Lab Analyst &middot; Summers 2023 &ndash; 2026</span>
       <h3>USC Social Media Insights Lab</h3>
       <p>Producing social media analytics reports for clients including Nephron Pharmaceuticals and Chernoff Newman. Contributing to the methodology and software behind College Sports Social Pulse, featured in Sports Business Journal.</p>
-      <a class="card-link" href="https://collegesportssocialpulse.com" target="_blank">collegesportssocialpulse.com &rarr;</a>
+      <a class="card-link" href="https://collegesportssocialpulse.com" target="_blank" rel="noopener noreferrer">collegesportssocialpulse.com &rarr;</a>
     </div>
   </div>
 </section>
@@ -147,8 +168,9 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-links">
-      <a href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">Google Scholar</a>
-      <a href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://sc.edu/study/colleges_schools/cic/academic_programs/phd/mass_communication_phd/doctoral_students/agaoglu_ertan.php" target="_blank" rel="noopener noreferrer">USC Profile</a>
       <a href="mailto:eagaoglu@email.sc.edu">Email</a>
     </div>
     <p>&copy; 2026 Ertan Ağaoğlu</p>

@@ -153,7 +153,7 @@ footer p{font-size:.75rem;color:var(--muted)}
 .see-more-btn{display:inline-block;margin-top:1.5rem;font-size:.82rem;font-weight:500;color:var(--accent2);background:none;border:1px solid var(--border);padding:.6rem 1.5rem;border-radius:6px;cursor:pointer;transition:all .3s;letter-spacing:.04em}
 .see-more-btn:hover{border-color:var(--text);color:var(--text)}
 .ta-hidden{max-height:0;overflow:hidden;opacity:0;transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .4s ease,margin .4s ease;margin-top:0}
-.ta-hidden.open{max-height:600px;opacity:1;margin-top:1.25rem}
+.ta-hidden.open{max-height:1200px;opacity:1;margin-top:1.25rem}
 
 /* Scroll Reveal */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}

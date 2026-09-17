@@ -4,19 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teaching | Ertan Ağaoğlu</title>
+  <meta name="description" content="Teaching portfolio, courses, pedagogical philosophy, and academic awards of Ertan Ağaoğlu at the University of South Carolina.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ertan Ağaoğlu">
+  <meta property="og:title" content="Teaching | Ertan Ağaoğlu">
+  <meta property="og:description" content="Teaching portfolio, courses, pedagogical philosophy, and academic awards of Ertan Ağaoğlu.">
+  <meta property="og:url" content="https://ertanagaoglu.com/teaching.html">
+  <meta property="og:image" content="https://ertanagaoglu.com/agaoglu_ertan.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ertanagaoglu">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .teaching-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:0 3rem;background:url('54401396823_1c6bea83d5_o.jpg') center/cover no-repeat}
-    .teaching-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.3) 40%,rgba(0,0,0,.05) 100%)}
-    .teaching-hero .hero-content{position:relative;z-index:1;max-width:1400px;margin:0 auto;width:100%;padding:0 0 5rem}
-    .teaching-hero .hero-name,.teaching-hero .hero-desc,.teaching-hero .overline{color:#fff}
-    .teaching-hero .hero-desc{font-size:1.05rem;line-height:1.8;max-width:540px}
-    .scroll-arrow{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;cursor:pointer;text-decoration:none;color:rgba(255,255,255,.7);z-index:1}
+    .teaching-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:0 3rem;background:url('54401396823_1c6bea83d5_o.webp') center/cover no-repeat;background-image:image-set(url('54401396823_1c6bea83d5_o.webp') type('image/webp'), url('54401396823_1c6bea83d5_o_opt.jpg') type('image/jpeg'))}
+    .teaching-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.8) 0%,rgba(0,0,0,.45) 50%,rgba(0,0,0,.15) 100%),linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 60%),linear-gradient(to bottom,rgba(0,0,0,.45) 0%,transparent 30%)}
+    .teaching-hero .hero-content{position:relative;z-index:1;max-width:1400px;margin:0 auto;width:100%;padding:0 0 5rem;display:block}
+    .teaching-hero .hero-text{max-width:620px;padding-right:0}
+    .teaching-hero .hero-name{font-size:4.5rem;line-height:1.05;margin-bottom:1.25rem;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+    .teaching-hero .hero-desc{font-size:1.05rem;line-height:1.8;max-width:560px;color:rgba(255,255,255,.92);text-shadow:0 1px 4px rgba(0,0,0,.4);font-weight:300}
+    .teaching-hero .overline{display:inline-block;color:#a8c7fa;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem;font-weight:600}
+    nav:not(.scrolled) .nav-logo{color:#fff}
+    nav:not(.scrolled) .nav-links a{color:rgba(255,255,255,.85)}
+    nav:not(.scrolled) .nav-links a:hover,nav:not(.scrolled) .nav-links a.active{color:#fff}
+    nav:not(.scrolled) .nav-toggle svg{stroke:#fff}
+    .scroll-arrow{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;cursor:pointer;text-decoration:none;color:rgba(255,255,255,.8);z-index:1}
     .scroll-arrow span{font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
-    .scroll-arrow svg{width:24px;height:24px;stroke:rgba(255,255,255,.7);stroke-width:2;fill:none;animation:bounce 2s infinite}
+    .scroll-arrow svg{width:24px;height:24px;stroke:rgba(255,255,255,.8);stroke-width:2;fill:none;animation:bounce 2s infinite}
     @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(8px)}60%{transform:translateY(4px)}}
     @media(max-width:900px){
       .teaching-hero{padding:0 1.5rem;min-height:100vh}
@@ -44,9 +63,11 @@
 
 <section class="teaching-hero">
   <div class="hero-content">
-    <span class="overline">Teaching</span>
-    <h1 class="hero-name" style="font-size:5.5rem;margin-bottom:1.5rem;line-height:1">Experience Media,<br><em>Then Question It</em></h1>
-    <p class="hero-desc"><strong>Every student is already an experienced media user.</strong> I help them turn that experience into critical understanding, equipping them to see media as a force shaping how we know the world and each other.</p>
+    <div class="hero-text">
+      <span class="overline">Teaching</span>
+      <h1 class="hero-name">Experience Media,<br><em>Then Question It</em></h1>
+      <p class="hero-desc"><strong>Every student is already an experienced media user.</strong> I help them turn that experience into critical understanding, equipping them to see media as a force shaping how we know the world and each other.</p>
+    </div>
   </div>
   <a href="#content" class="scroll-arrow">
     <span>Scroll</span>
@@ -164,8 +185,9 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-links">
-      <a href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank">Google Scholar</a>
-      <a href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://sc.edu/study/colleges_schools/cic/academic_programs/phd/mass_communication_phd/doctoral_students/agaoglu_ertan.php" target="_blank" rel="noopener noreferrer">USC Profile</a>
       <a href="mailto:eagaoglu@email.sc.edu">Email</a>
     </div>
     <p>&copy; 2026 Ertan Ağaoğlu</p>
