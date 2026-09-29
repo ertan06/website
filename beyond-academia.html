@@ -101,11 +101,12 @@ document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
   function render(){
     pages.forEach((p,i)=>{
       const off=i-idx;
-      p.style.setProperty('--o',Math.max(off,0));
-      p.style.zIndex=off<0?11:10-off;
+      const c=Math.max(-2,Math.min(2,off));
+      p.style.setProperty('--o',c);
+      p.style.setProperty('--a',Math.abs(c));
+      p.style.zIndex=10-Math.abs(off);
       p.classList.toggle('is-active',off===0);
-      p.classList.toggle('is-past',off<0);
-      p.classList.toggle('is-far',off>3);
+      p.classList.toggle('is-far',Math.abs(off)>2);
       p.setAttribute('aria-hidden',off===0?'false':'true');
     });
     count.textContent=(idx+1)+' / '+pages.length;
@@ -118,7 +119,7 @@ document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
   next.addEventListener('click',()=>go(idx+1));
   pages.forEach((p,i)=>p.addEventListener('click',()=>{
     if(swiped){swiped=false;return}
-    if(i>idx) go(i);
+    if(i!==idx) go(i);
   }));
   stack.addEventListener('keydown',e=>{
     if(e.key==='ArrowLeft'){go(idx-1);e.preventDefault()}
