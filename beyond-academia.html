@@ -47,7 +47,19 @@
 <section class="section" style="padding-top:2rem">
   <div class="two-col">
     <div class="col-left reveal">
-      <div class="photo-placeholder">Photo</div>
+      <div class="photo-stack" id="photoStack" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Personal photos">
+        <div class="stack-viewport">
+          <div class="stack-page"><img src="photos/1.jpg" alt="Portrait of Ertan Ağaoğlu in a mustard shirt and round glasses" width="576" height="720"></div>
+          <div class="stack-page"><img src="photos/2.jpg" alt="A bowl of freshly picked red cherries resting on grass" width="1000" height="1250"></div>
+          <div class="stack-page"><img src="photos/6.jpg" alt="A train pulling into a concrete brutalist metro station" width="1000" height="1250"></div>
+          <div class="stack-page"><img src="photos/8.jpg" alt="A tabby and white cat resting in golden evening light" width="1000" height="1250"></div>
+        </div>
+        <div class="stack-controls">
+          <button type="button" class="stack-btn" data-dir="-1" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
+          <button type="button" class="stack-btn" data-dir="1" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+          <span class="stack-count" aria-live="polite"></span>
+        </div>
+      </div>
     </div>
     <div class="col-right reveal reveal-delay-1">
       <p>I am an international scholar from Türkiye, now based in the United States. I studied American Culture and Literature as an undergraduate. Examining culture systematically made me curious about media and its influence on society, which led me to communication. During my master's studies at Hacettepe University, I became interested in digital inequalities and researched how older adults and communities experienced them, including during the COVID-19 pandemic. I also worked as a full-time research assistant at Hacettepe before moving to the United States for my Ph.D. The University of South Carolina gave me the opportunity to pursue what I was most curious about: how we interact with technology, particularly artificial intelligence. Today, I study these interactions to understand how AI can be used ethically and effectively in strategic communication, and how everyone can benefit from it in health contexts.</p>
@@ -75,6 +87,53 @@
 window.addEventListener('scroll',()=>{document.querySelector('nav').classList.toggle('scrolled',window.scrollY>50)});
 const o=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
+
+(function(){
+  const stack=document.getElementById('photoStack');
+  if(!stack) return;
+  const pages=[...stack.querySelectorAll('.stack-page')];
+  const viewport=stack.querySelector('.stack-viewport');
+  const prev=stack.querySelector('[data-dir="-1"]');
+  const next=stack.querySelector('[data-dir="1"]');
+  const count=stack.querySelector('.stack-count');
+  let idx=0, startX=null, swiped=false;
+
+  function render(){
+    pages.forEach((p,i)=>{
+      const off=i-idx;
+      p.style.setProperty('--o',Math.max(off,0));
+      p.style.zIndex=off<0?11:10-off;
+      p.classList.toggle('is-active',off===0);
+      p.classList.toggle('is-past',off<0);
+      p.classList.toggle('is-far',off>3);
+      p.setAttribute('aria-hidden',off===0?'false':'true');
+    });
+    count.textContent=(idx+1)+' / '+pages.length;
+    prev.disabled=idx===0;
+    next.disabled=idx===pages.length-1;
+  }
+  function go(n){idx=Math.min(Math.max(n,0),pages.length-1);render()}
+
+  prev.addEventListener('click',()=>go(idx-1));
+  next.addEventListener('click',()=>go(idx+1));
+  pages.forEach((p,i)=>p.addEventListener('click',()=>{
+    if(swiped){swiped=false;return}
+    if(i>idx) go(i);
+  }));
+  stack.addEventListener('keydown',e=>{
+    if(e.key==='ArrowLeft'){go(idx-1);e.preventDefault()}
+    if(e.key==='ArrowRight'){go(idx+1);e.preventDefault()}
+  });
+  viewport.addEventListener('pointerdown',e=>{startX=e.clientX});
+  viewport.addEventListener('pointerup',e=>{
+    if(startX===null) return;
+    const dx=e.clientX-startX;
+    startX=null;
+    if(Math.abs(dx)>40){swiped=true;go(idx+(dx<0?1:-1))}
+  });
+  viewport.addEventListener('pointercancel',()=>{startX=null});
+  render();
+})();
 </script>
 </body>
 </html>
