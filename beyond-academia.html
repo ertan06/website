@@ -28,8 +28,10 @@
     .stack-page img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
     .stack-page.is-active{cursor:default;box-shadow:0 18px 50px rgba(0,0,0,.18)}
     .stack-page.is-far{opacity:0;pointer-events:none}
-    .stack-caption{min-height:1.4em;margin-top:1rem;text-align:center;font-size:.85rem;color:var(--text2)}
-    .stack-controls{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-top:.5rem}
+    .stack-page.has-caption::after{content:'';position:absolute;left:0;right:0;bottom:0;height:22%;background:linear-gradient(to top,rgba(0,0,0,.4),transparent);opacity:0;transition:opacity .4s ease;pointer-events:none}
+    .page-caption{position:absolute;right:1rem;bottom:.9rem;z-index:1;font-size:.75rem;font-weight:500;letter-spacing:.02em;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);opacity:0;transition:opacity .4s ease;pointer-events:none}
+    .stack-page.is-active.has-caption::after,.stack-page.is-active .page-caption{opacity:1}
+    .stack-controls{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-top:1.25rem}
     .stack-btn{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--bg);cursor:pointer;transition:all .3s}
     .stack-btn svg{width:16px;height:16px;stroke:var(--text2);stroke-width:1.75;fill:none;transition:stroke .3s}
     .stack-btn:hover:not(:disabled){border-color:var(--accent);background:var(--accent)}
@@ -68,11 +70,10 @@
       <div class="photo-stack" id="photoStack" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Personal photos">
         <div class="stack-viewport">
           <div class="stack-page"><img src="photos/1.jpg" alt="Portrait of Ertan Ağaoğlu in a mustard shirt and round glasses" width="576" height="720"></div>
-          <div class="stack-page" data-caption="Common bugloss, Batikent, Ankara"><img src="photos/5.jpg" alt="Blue wildflowers in bloom in a sunlit green field" width="1000" height="1250"></div>
-          <div class="stack-page" data-caption="Washington Metro"><img src="photos/6.jpg" alt="A train pulling into a concrete brutalist metro station" width="1000" height="1250"></div>
-          <div class="stack-page" data-caption="Kizi, my beloved cat"><img src="photos/8.jpg" alt="A tabby and white cat resting in golden evening light" width="1000" height="1250"></div>
+          <div class="stack-page has-caption"><img src="photos/5.jpg" alt="Blue wildflowers in bloom in a sunlit green field" width="1000" height="1250"><span class="page-caption">Common bugloss, Batikent, Ankara</span></div>
+          <div class="stack-page has-caption"><img src="photos/6.jpg" alt="A train pulling into a concrete brutalist metro station" width="1000" height="1250"><span class="page-caption">Washington Metro</span></div>
+          <div class="stack-page has-caption"><img src="photos/8.jpg" alt="A tabby and white cat resting in golden evening light" width="1000" height="1250"><span class="page-caption">Kizi, my beloved cat</span></div>
         </div>
-        <p class="stack-caption" aria-live="polite"></p>
         <div class="stack-controls">
           <button type="button" class="stack-btn" data-dir="-1" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
           <button type="button" class="stack-btn" data-dir="1" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
@@ -115,7 +116,6 @@ document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
   const prev=stack.querySelector('[data-dir="-1"]');
   const next=stack.querySelector('[data-dir="1"]');
   const count=stack.querySelector('.stack-count');
-  const caption=stack.querySelector('.stack-caption');
   let idx=0, startX=null, swiped=false;
 
   function render(){
@@ -129,7 +129,6 @@ document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
       p.classList.toggle('is-far',Math.abs(off)>2);
       p.setAttribute('aria-hidden',off===0?'false':'true');
     });
-    caption.textContent=pages[idx].dataset.caption||'';
     count.textContent=(idx+1)+' / '+pages.length;
     prev.disabled=idx===0;
     next.disabled=idx===pages.length-1;
