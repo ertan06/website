@@ -165,6 +165,9 @@ footer p{font-size:.75rem;color:var(--muted)}
 .course-name{font-family:var(--serif);font-size:1.05rem;font-weight:400}
 .course-detail{font-size:.82rem;color:var(--muted);margin-top:.35rem}
 .usc-mark{display:inline-block;height:1.15em;width:auto;vertical-align:-.22em;margin-right:.35rem}
+.hu-mark{height:1.3em;vertical-align:-.3em}
+.ta-note .usc-mark{height:1.6em;vertical-align:-.45em}
+.ta-note .hu-mark{height:1.7em}
 
 /* Awards */
 .awards-list{display:flex;flex-direction:column}
