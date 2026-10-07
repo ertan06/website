@@ -160,6 +160,13 @@ footer p{font-size:.75rem;color:var(--muted)}
 .app-body p{font-size:.92rem;line-height:1.8;color:var(--text2);font-weight:300;margin-bottom:1rem}
 .app-body .app-skills{font-size:.78rem;color:var(--muted);font-weight:500;margin-bottom:0}
 
+.app-side{display:grid;grid-template-columns:300px 1fr;max-width:1000px}
+.app-thumb{display:block;border-right:1px solid var(--border);background:var(--bg2)}
+.app-thumb img{display:block;width:100%;height:auto}
+.app-list{margin:0 0 1rem 1.1rem;font-size:.88rem;line-height:1.7;color:var(--text2);font-weight:300}
+.app-list li{margin-bottom:.35rem}
+@media(max-width:900px){.app-side{grid-template-columns:1fr}.app-thumb{border-right:none;border-bottom:1px solid var(--border)}}
+
 /* See More */
 .see-more-btn{display:inline-block;margin-top:1.5rem;font-size:.82rem;font-weight:500;color:var(--accent2);background:none;border:1px solid var(--border);padding:.6rem 1.5rem;border-radius:6px;cursor:pointer;transition:all .3s;letter-spacing:.04em}
 .see-more-btn:hover{border-color:var(--text);color:var(--text)}
