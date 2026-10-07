@@ -6,8 +6,8 @@
   --text2:#4a4a4a;
   --muted:#888;
   --border:#e0e0de;
-  --accent:#1a3a5c;
-  --accent2:#2a5a8c;
+  --accent:#156082;
+  --accent2:#156082;
   --serif:'DM Serif Display',Georgia,serif;
   --sans:'Inter',system-ui,sans-serif;
 }
@@ -63,7 +63,7 @@ nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit
 .contact-title{font-family:var(--serif);font-size:1.3rem;font-weight:400;letter-spacing:-.01em;margin-bottom:1.1rem;color:var(--text)}
 .contact-card .social-row{margin:0 auto;max-width:none;gap:.85rem}
 .contact-card .social-row a{position:relative;width:46px;height:46px;transition:all .3s,transform .3s}
-.contact-card .social-row a:hover,.contact-card .social-row a:focus-visible{transform:translateY(-4px);box-shadow:0 8px 18px rgba(26,58,92,.22)}
+.contact-card .social-row a:hover,.contact-card .social-row a:focus-visible{transform:translateY(-4px);box-shadow:0 8px 18px rgba(21,96,130,.22)}
 .contact-card .social-row a:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
 .contact-card .social-row svg{width:19px;height:19px}
 .contact-card .orcid-icon{width:24px;height:24px}
@@ -74,7 +74,7 @@ nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit
 
 /* Buttons */
 .btn-primary{display:inline-block;font-size:.82rem;font-weight:500;letter-spacing:.04em;color:#fff;background:var(--accent);padding:.85rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s}
-.btn-primary:hover{background:#0f2840;box-shadow:0 4px 20px rgba(26,58,92,.2)}
+.btn-primary:hover{background:#0f4a64;box-shadow:0 4px 20px rgba(21,96,130,.2)}
 .btn-outline{display:inline-block;font-size:.82rem;font-weight:500;letter-spacing:.04em;color:var(--text);background:transparent;padding:.85rem 2rem;border-radius:6px;border:1px solid var(--border);text-decoration:none;transition:all .3s}
 .btn-outline:hover{border-color:var(--text);background:var(--bg2)}
 
@@ -151,7 +151,7 @@ footer p{font-size:.75rem;color:var(--muted)}
 .page-header p{font-size:1.1rem;color:var(--text2);margin-top:1rem;max-width:600px;font-weight:300;line-height:1.8}
 
 /* Pub page types */
-.pub-type{display:inline-block;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent2);background:rgba(42,90,140,.06);padding:3px 8px;border-radius:4px;margin-right:.5rem}
+.pub-type{display:inline-block;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent2);background:rgba(21,96,130,.06);padding:3px 8px;border-radius:4px;margin-right:.5rem}
 .pub-card{padding:1.5rem 0;border-bottom:1px solid var(--border)}
 .pub-card .pub-title{font-size:.95rem;font-weight:400;line-height:1.6;margin-bottom:.25rem}
 .pub-card .pub-authors{font-size:.82rem;color:var(--muted);margin-top:.25rem}
@@ -209,7 +209,7 @@ footer p{font-size:.75rem;color:var(--muted)}
 .principles span{font-family:var(--sans);font-size:.65rem;font-weight:600;letter-spacing:.14em;color:var(--accent2)}
 .philosophy-text p{font-size:1.05rem;line-height:1.8;font-weight:400;color:var(--text);margin-bottom:1.1rem}
 .philosophy-text p:last-child{margin-bottom:0}
-.philosophy strong{font-weight:600;background:linear-gradient(transparent 58%,rgba(42,90,140,.2) 58%);padding:0 .1em}
+.philosophy strong{font-weight:600;background:linear-gradient(transparent 58%,rgba(21,96,130,.2) 58%);padding:0 .1em}
 .teaching-split .sub-title{font-family:var(--serif);font-size:1.4rem;font-weight:400;letter-spacing:-.01em;margin-bottom:1rem;color:var(--text)}
 @media(max-width:900px){.philosophy-band{padding:2.5rem 1.5rem}.philosophy{grid-template-columns:1fr;gap:1.75rem}}
 
@@ -223,7 +223,7 @@ footer p{font-size:.75rem;color:var(--muted)}
 .quote figcaption{position:relative;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-top:1.25rem}
 
 .coming-soon{display:flex;align-items:center;gap:1.25rem;max-width:880px;padding:1.75rem 2rem;border:1px dashed var(--border);border-radius:8px;background:var(--bg2)}
-.coming-pill{flex-shrink:0;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);background:rgba(42,90,140,.08);padding:.4rem .8rem;border-radius:999px}
+.coming-pill{flex-shrink:0;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);background:rgba(21,96,130,.08);padding:.4rem .8rem;border-radius:999px}
 .coming-soon p{font-size:.95rem;color:var(--text2);font-weight:300}
 
 /* Chatbots card and lightbox */
