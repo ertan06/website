@@ -1,6 +1,4 @@
 (function(){
-  var tabs=[].slice.call(document.querySelectorAll('.skill-tab'));
-  var items=[].slice.call(document.querySelectorAll('.skill'));
   var more=document.querySelector('.strip-more');
   var panel=document.getElementById('skills-panel');
   if(more&&panel){
@@ -13,16 +11,15 @@
       if(open)panel.removeAttribute('inert');else panel.setAttribute('inert','');
     });
   }
-  tabs.forEach(function(t){
+  var tiles=[].slice.call(document.querySelectorAll('.cat-tile'));
+  tiles.forEach(function(t){
     t.addEventListener('click',function(){
-      var f=t.dataset.filter;
-      tabs.forEach(function(x){
-        var on=x===t;
-        x.classList.toggle('is-active',on);
-        x.setAttribute('aria-pressed',on?'true':'false');
-      });
-      items.forEach(function(it){
-        it.classList.toggle('is-dim',f!=='all'&&it.dataset.cat!==f);
+      var wasOpen=t.getAttribute('aria-expanded')==='true';
+      tiles.forEach(function(x){
+        var on=x===t&&!wasOpen;
+        x.setAttribute('aria-expanded',on?'true':'false');
+        var d=document.getElementById(x.getAttribute('aria-controls'));
+        if(d)d.hidden=!on;
       });
     });
   });
