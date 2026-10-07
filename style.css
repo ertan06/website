@@ -343,12 +343,12 @@ section[id],.app-card[id]{scroll-margin-top:136px}
 .skill-tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.1rem}
 .skill-tab{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-size:.72rem;font-weight:500;color:var(--text2);background:transparent;border:1px solid transparent;border-radius:999px;padding:.3rem .75rem;cursor:pointer;transition:all .25s}
 .skill-tab span{font-size:.62rem;font-weight:600;color:var(--muted);transition:color .25s}
-.skill-tab:hover{color:var(--text);border-color:#cfe0e8}
+.skill-tab:hover{color:var(--text);border-color:var(--border)}
 .skill-tab.is-active{background:var(--accent);border-color:var(--accent);color:#fff}
 .skill-tab.is-active span{color:rgba(255,255,255,.75)}
 .skill-tab:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
 .skill-grid{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
-.skill{display:inline-flex;align-items:center;padding:.3rem .8rem;border:1px solid #d3e4ec;border-radius:999px;background:#fff;transition:opacity .35s,transform .35s,border-color .25s,background .25s,filter .35s}
+.skill{display:inline-flex;align-items:center;padding:.3rem .8rem;border:1px solid var(--border);border-radius:999px;background:#fff;transition:opacity .35s,transform .35s,border-color .25s,background .25s,filter .35s}
 .skill:hover{border-color:var(--accent2);background:#fff;transform:translateY(-1px)}
 .skill-mark,.skill-cat{display:none}
 .skill-text{display:flex;min-width:0}
@@ -357,15 +357,15 @@ section[id],.app-card[id]{scroll-margin-top:136px}
 @media(prefers-reduced-motion:reduce){.skill,.skill-tab{transition:none}.skill:hover{transform:none}}
 
 /* Skills strip */
-.skills-strip{background:#e9f2f6;border-bottom:1px solid #d3e4ec}
-.skills-strip .strip-pill{background:#fff;border-color:#d3e4ec}
-.skills-strip .skill{background:#fff;border-color:#d3e4ec}
-.strip-bar{max-width:1400px;margin:0 auto;padding:1.5rem 3rem;display:flex;align-items:center;gap:1.75rem}
-.strip-title{font-family:var(--serif);font-size:1.4rem;font-weight:400;letter-spacing:-.01em;color:var(--text);flex-shrink:0}
+.skills-strip{background:var(--bg2);border-bottom:1px solid var(--border)}
+.skills-strip .strip-pill{background:#fff;border-color:var(--border)}
+.skills-strip .skill{background:#fff;border-color:var(--border)}
+.strip-bar{max-width:1400px;margin:0 auto;padding:1.5rem 3rem;min-height:110px;display:flex;align-items:center;gap:2rem}
+.strip-title{font-family:var(--serif);font-size:1.6rem;font-weight:400;letter-spacing:-.01em;color:var(--text);flex-shrink:0}
 .strip-pills{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
-.strip-pill{display:inline-flex;align-items:center;gap:.55rem;padding:.35rem .9rem .35rem .4rem;border:1px solid var(--border);border-radius:999px;font-size:.85rem;font-weight:500;color:var(--text)}
-.strip-mark{display:flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(21,96,130,.1);color:var(--accent);font-size:.62rem;font-weight:600}
-.strip-more{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-size:.8rem;font-weight:500;color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.5rem 1rem;cursor:pointer;transition:background .25s,box-shadow .25s,transform .25s;flex-shrink:0;animation:strip-pulse 2.6s ease-in-out infinite}
+.strip-pill{display:inline-flex;align-items:center;gap:.6rem;padding:.45rem 1.1rem .45rem .45rem;border:1px solid var(--border);border-radius:999px;font-size:.95rem;font-weight:500;color:var(--text)}
+.strip-mark{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:rgba(21,96,130,.1);color:var(--accent);font-size:.68rem;font-weight:600}
+.strip-more{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-size:.9rem;font-weight:500;color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.65rem 1.3rem;cursor:pointer;transition:background .25s,box-shadow .25s,transform .25s;flex-shrink:0;animation:strip-pulse 2.6s ease-in-out infinite}
 .strip-more:hover{background:#0f4a64;border-color:#0f4a64;animation:none;box-shadow:0 6px 18px rgba(21,96,130,.3);transform:translateY(-1px)}
 .strip-more:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
 .strip-more[aria-expanded="true"]{animation:none}
