@@ -205,6 +205,10 @@ footer p{font-size:.75rem;color:var(--muted)}
 .quote blockquote{position:relative;font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.55;color:var(--text);font-weight:400}
 .quote figcaption{position:relative;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-top:1.25rem}
 
+.coming-soon{display:flex;align-items:center;gap:1.25rem;max-width:880px;padding:1.75rem 2rem;border:1px dashed var(--border);border-radius:8px;background:var(--bg2)}
+.coming-pill{flex-shrink:0;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);background:rgba(42,90,140,.08);padding:.4rem .8rem;border-radius:999px}
+.coming-soon p{font-size:.95rem;color:var(--text2);font-weight:300}
+
 /* See More */
 .see-more-btn{display:inline-block;margin-top:1.5rem;font-size:.82rem;font-weight:500;color:var(--accent2);background:none;border:1px solid var(--border);padding:.6rem 1.5rem;border-radius:6px;cursor:pointer;transition:all .3s;letter-spacing:.04em}
 .see-more-btn:hover{border-color:var(--text);color:var(--text)}
