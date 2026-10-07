@@ -82,7 +82,10 @@ nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit
 .edu-wide:hover{box-shadow:none;border-color:var(--border)}
 .edu-wide .edu-list{max-width:1400px;margin:0 auto;padding:0 3rem}
 .edu-wide .edu-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0}
-.edu-wide .edu-item{margin:0;padding:1.6rem 1.5rem;border-radius:0}
+@media(min-width:1101px){.edu-wide .edu-list{grid-template-columns:1fr 1.06fr 1fr 1.25fr}}
+.edu-wide .edu-item{margin:0;padding:1.6rem 1.1rem;border-radius:0;align-items:flex-start;gap:.85rem}
+.edu-wide .edu-logo{margin-top:.1rem}
+.edu-wide .edu-degree{font-size:1rem}
 .edu-wide .edu-item+.edu-item{border-top:none;border-left:1px solid var(--border)}
 .edu-wide .edu-item:first-child{padding-left:0}
 .edu-wide .edu-item:first-child:hover{background:transparent}
@@ -94,6 +97,7 @@ nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit
 .edu-logo img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}
 .edu-text{display:flex;flex-direction:column;gap:.15rem}
 .edu-degree{font-family:var(--serif);font-size:1.05rem;color:var(--text);line-height:1.35}
+.edu-year{font-size:.8rem;font-weight:600;letter-spacing:.04em;color:var(--accent2)}
 .edu-inst{font-size:.82rem;color:var(--muted)}
 
 /* Buttons */
