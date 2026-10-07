@@ -151,6 +151,15 @@ footer p{font-size:.75rem;color:var(--muted)}
 .contact-link svg{width:20px;height:20px;stroke:var(--muted);stroke-width:1.5;fill:none;flex-shrink:0}
 
 
+/* Portfolio apps */
+.app-card{border:1px solid var(--border);border-radius:8px;background:var(--bg);overflow:hidden;transition:box-shadow .3s}
+.app-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.06)}
+.app-img{display:block;width:100%;height:auto;border-bottom:1px solid var(--border)}
+.app-body{padding:2rem}
+.app-body h3{margin:.35rem 0 1rem;font-size:1.5rem}
+.app-body p{font-size:.92rem;line-height:1.8;color:var(--text2);font-weight:300;margin-bottom:1rem}
+.app-body .app-skills{font-size:.78rem;color:var(--muted);font-weight:500;margin-bottom:0}
+
 /* See More */
 .see-more-btn{display:inline-block;margin-top:1.5rem;font-size:.82rem;font-weight:500;color:var(--accent2);background:none;border:1px solid var(--border);padding:.6rem 1.5rem;border-radius:6px;cursor:pointer;transition:all .3s;letter-spacing:.04em}
 .see-more-btn:hover{border-color:var(--text);color:var(--text)}
