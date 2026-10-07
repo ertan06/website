@@ -40,11 +40,47 @@
   </div>
 </nav>
 
-<div class="page-header">
-  <span class="overline">Apps, Dashboards &amp; Data Stories</span>
-  <h1>Portfolio</h1>
-  <p>Apps, dashboards, and visualizations that turn data into clear stories, along with my work in AI, from podcasts to chatbots.</p>
-</div>
+<header class="pf-hero">
+  <div class="pf-copy">
+    <span class="overline">Apps, Dashboards &amp; Data Stories</span>
+    <h1>Portfolio</h1>
+    <p>Apps, dashboards, and visualizations that turn data into clear stories, along with my work in AI, from podcasts to chatbots.</p>
+    <ol class="pf-list" aria-label="Projects">
+        <li><button type="button" class="pf-item is-active" data-index="0"><span class="pf-num">01</span><span class="pf-name">College Sports Social Pulse</span></button></li>
+        <li><button type="button" class="pf-item" data-index="1"><span class="pf-num">02</span><span class="pf-name">SMIL Board</span></button></li>
+        <li><button type="button" class="pf-item" data-index="2"><span class="pf-num">03</span><span class="pf-name">The AI Knowledge Divide</span></button></li>
+        <li><button type="button" class="pf-item" data-index="3"><span class="pf-num">04</span><span class="pf-name">AI Chatbot for Learning</span></button></li>
+        <li><button type="button" class="pf-item" data-index="4"><span class="pf-num">05</span><span class="pf-name">Chatbot as Experimental Stimuli</span></button></li>
+        <li><button type="button" class="pf-item" data-index="5"><span class="pf-num">06</span><span class="pf-name">Health Bot</span></button></li>
+    </ol>
+  </div>
+  <div class="pf-stage" aria-roledescription="carousel" aria-label="Project previews">
+        <a class="pf-slide" href="#social-pulse" data-title="College Sports Social Pulse">
+          <span class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><em>College Sports Social Pulse</em></span>
+          <span class="pf-view"><img src="portfolio/sports-social-pulse.webp" alt="College Sports Social Pulse website" loading="eager"></span>
+        </a>
+        <a class="pf-slide" href="#smil-board" data-fit="contain" data-title="SMIL Board">
+          <span class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><em>SMIL Board</em></span>
+          <span class="pf-view"><img src="portfolio/smil-board.webp" alt="SMIL Board news analytics dashboard" loading="lazy"></span>
+        </a>
+        <a class="pf-slide" href="#data-viz" data-title="The AI Knowledge Divide">
+          <span class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><em>The AI Knowledge Divide</em></span>
+          <span class="pf-view"><img src="portfolio/ai-knowledge-divide-full.webp" alt="AI Knowledge Divide infographic" loading="lazy"></span>
+        </a>
+        <a class="pf-slide" href="#ai-chatbots" data-title="AI Chatbot for Learning">
+          <span class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><em>AI Chatbot for Learning</em></span>
+          <span class="pf-view"><img src="portfolio/chatbot-learning.webp" alt="Course chatbot conversation about South Korea's media influence" loading="lazy"></span>
+        </a>
+        <a class="pf-slide" href="#ai-chatbots" data-title="Chatbot as Experimental Stimuli">
+          <span class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><em>Chatbot as Experimental Stimuli</em></span>
+          <span class="pf-view"><img src="portfolio/chatbot-experiment.webp" alt="uChat flow builder for the experimental chatbot" loading="lazy"></span>
+        </a>
+        <a class="pf-slide" href="#ai-chatbots" data-title="Health Bot">
+          <span class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><em>Health Bot</em></span>
+          <span class="pf-view"><img src="portfolio/health-bot.webp" alt="Health Bot with explainable AI" loading="lazy"></span>
+        </a>
+  </div>
+</header>
 
 <div class="subnav" aria-label="Jump to a section">
   <div class="subnav-inner">
@@ -179,6 +215,7 @@ const o=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersec
 document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
 </script>
 <script src="subnav.js" defer></script>
+<script src="pf-hero.js" defer></script>
 <script src="lightbox.js" defer></script>
 </body>
 </html>
