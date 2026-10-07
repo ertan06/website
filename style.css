@@ -353,7 +353,7 @@ section[id],.app-card[id]{scroll-margin-top:136px}
 .skill-mark{display:flex;align-items:center;justify-content:center;width:40px;height:40px;flex-shrink:0;border-radius:10px;background:rgba(21,96,130,.08);color:var(--accent);font-size:.8rem;font-weight:600;letter-spacing:.02em;transition:background .3s,color .3s}
 .skill:hover .skill-mark{background:var(--accent);color:#fff}
 .skill-text{display:flex;flex-direction:column;gap:.15rem;min-width:0}
-.skill-name{font-family:var(--serif);font-size:1.05rem;color:var(--text);line-height:1.2}
+.skill-name{overflow-wrap:anywhere;font-family:var(--serif);font-size:1.05rem;color:var(--text);line-height:1.2}
 .skill-cat{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .skill.is-dim{opacity:.22;transform:scale(.97);filter:grayscale(1);pointer-events:none}
 @media(prefers-reduced-motion:reduce){.skill,.skill-tab{transition:none}.skill:hover{transform:none}}
