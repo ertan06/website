@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Ertan Ağaoğlu</title>
-  <meta name="description" content="Contact Ertan Ağaoğlu - Ph.D. Candidate & Researcher at the University of South Carolina.">
+  <title>Portfolio | Ertan Ağaoğlu</title>
+  <meta name="description" content="Scripts, reports, and other work by Ertan Ağaoğlu.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ertan Ağaoğlu">
-  <meta property="og:title" content="Contact | Ertan Ağaoğlu">
-  <meta property="og:description" content="Get in touch with Ertan Ağaoğlu for research collaborations, teaching inquiries, or speaking engagements.">
-  <meta property="og:url" content="https://ertanagaoglu.com/contact.html">
+  <meta property="og:title" content="Portfolio | Ertan Ağaoğlu">
+  <meta property="og:description" content="Scripts, reports, and other work by Ertan Ağaoğlu.">
+  <meta property="og:url" content="https://ertanagaoglu.com/portfolio.html">
   <meta property="og:image" content="https://ertanagaoglu.com/agaoglu_ertan.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ertanagaoglu">
@@ -34,46 +34,54 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="research.html">Research</a></li>
       <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
       <li><a href="beyond-academia.html">About Me</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="page-header">
-  <span class="overline">Contact</span>
-  <h1>Get in Touch</h1>
-  <p>Open to research collaborations, teaching opportunities, and conversations about AI and communication.</p>
+  <span class="overline">Portfolio</span>
+  <h1>Scripts, Reports &amp; More</h1>
+  <p>A collection of my analysis scripts, reports, and other work.</p>
 </div>
 
 <section class="section" style="padding-top:2rem">
-  <div class="contact-links reveal">
-    <a class="contact-link" href="mailto:eagaoglu@email.sc.edu">
-      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-      eagaoglu@email.sc.edu
-    </a>
-    <a class="contact-link" href="https://scholar.google.com/citations?user=BY0EhgkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 7H20v13H6.5A2.5 2.5 0 0 1 4 17.5v-13z"/></svg>
-      Google Scholar
-    </a>
-    <a class="contact-link" href="https://www.linkedin.com/in/ertanagaoglu/" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-3a2 2 0 1 1 4 0v3"/></svg>
-      LinkedIn
-    </a>
-    <a class="contact-link" href="https://sc.edu/study/colleges_schools/cic/academic_programs/phd/mass_communication_phd/doctoral_students/agaoglu_ertan.php" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24"><path d="M2 10l10-7 10 7"/><path d="M4 10v11h16V10"/></svg>
-      USC Profile
-    </a>
+  <h2>Python Applications</h2>
+  <div class="app-card reveal">
+    <img class="app-img" src="portfolio/smil-board.webp" alt="SMIL Board dashboard showing news metrics, word cloud, emerging topics, and coverage map" loading="lazy">
+    <div class="app-body">
+      <span class="course-code">Streamlit &middot; Plotly &middot; VADER &middot; NewsAPI</span>
+      <h3 class="course-name">SMIL Board: World Cup 2026 News Tracker</h3>
+      <p>A real-time news analytics dashboard that aggregates and visualizes global sports media coverage. It pulls articles from NewsAPI and FreeNews APIs, deduplicates records, and displays sentiment analysis, emerging topics, word clouds, and geographic coverage metrics, all customizable through an admin panel.</p>
+      <p>Features include dynamic headline rotation, VADER sentiment scoring, and a toggle between country-level and US state-level coverage views powered by Plotly choropleth maps. Built for the USC Social Media Insights Lab with a digital-signage layout optimized for 3072&times;864 displays and full responsive support.</p>
+      <p class="app-skills">Data aggregation &middot; Real-time API integration &middot; Multi-page Streamlit apps &middot; Configurable analytics dashboards</p>
+    </div>
   </div>
+</section>
 
-  <div style="margin-top:3rem;padding:2rem;border:1px solid var(--border);border-radius:8px;max-width:500px">
-    <h3 style="font-family:var(--serif);font-size:1.1rem;font-weight:400;margin-bottom:.75rem">Mailing Address</h3>
-    <p style="font-size:.9rem;color:var(--text2);line-height:1.8">
-      School of Journalism and Mass Communications<br>
-      University of South Carolina<br>
-      Columbia, SC
-    </p>
+<section class="section">
+  <h2>Scripts</h2>
+  <div class="teaching-grid">
+    <div class="course reveal">
+      <div class="course-code">Python</div>
+      <div class="course-name">Project Title</div>
+      <div class="course-detail">Short description of what the script does.</div>
+      <a class="card-link" href="#">View on GitHub &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Reports</h2>
+  <div class="teaching-grid">
+    <div class="course reveal">
+      <div class="course-code">Report &middot; 2026</div>
+      <div class="course-name">Report Title</div>
+      <div class="course-detail">Short description of the report.</div>
+      <a class="card-link" href="#">Read report &rarr;</a>
+    </div>
   </div>
 </section>
 
