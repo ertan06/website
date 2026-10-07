@@ -88,8 +88,8 @@ nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit
 .edu-wide .edu-degree{font-size:1rem}
 .edu-wide .edu-item+.edu-item{border-top:none;border-left:1px solid var(--border)}
 .edu-wide .edu-item:first-child{padding-left:0}
-.edu-wide .edu-item:first-child:hover{background:transparent}
-@media(max-width:900px){.edu-wide .edu-list{padding:0 1.5rem}.edu-wide .edu-item{padding:1.1rem 0}.edu-wide .edu-item+.edu-item{border-left:none;border-top:1px solid var(--border)}}
+.edu-wide .edu-item:first-child:hover{box-shadow:-3rem 0 0 var(--bg2)}
+@media(max-width:900px){.edu-wide .edu-list{padding:0 1.5rem}.edu-wide .edu-item{padding:1.1rem 0}.edu-wide .edu-item:first-child:hover{box-shadow:-1.5rem 0 0 var(--bg2),1.5rem 0 0 var(--bg2)}.edu-wide .edu-item+.edu-item{border-left:none;border-top:1px solid var(--border)}}
 .edu-item{display:flex;align-items:center;gap:1rem;padding:.8rem .75rem;margin:0 -.75rem;transition:background .25s}
 .edu-item+.edu-item{border-top:1px solid var(--border)}
 .edu-item:hover{background:var(--bg2)}
