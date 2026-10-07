@@ -78,7 +78,25 @@
 </section>
 
 <div id="content">
-<section class="section labs-section">
+<div class="subnav" aria-label="Jump to a section">
+  <div class="subnav-inner">
+    <span class="subnav-label">Jump to</span>
+    <ul class="subnav-links">
+      <li><a href="#areas">Research Areas</a></li>
+      <li><a href="#methods">Methods</a></li>
+      <li><a href="#where">Where I Work</a></li>
+      <li><a href="#articles">Journal Articles</a></li>
+      <li><a href="#chapters">Book Chapters</a></li>
+      <li><a href="#conferences">Conferences</a></li>
+      <li><a href="#ongoing">Ongoing</a></li>
+      <li class="subnav-indicator" aria-hidden="true"></li>
+    </ul>
+    <button type="button" class="subnav-top" aria-label="Back to top">&uarr; Top</button>
+  </div>
+  <div class="subnav-progress" aria-hidden="true"></div>
+</div>
+
+<section class="section labs-section" id="areas">
   <div>
     <h2>Research Areas</h2>
   </div>
@@ -101,7 +119,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="methods">
   <span class="overline">Methods</span>
   <h2>Methodological Toolkit</h2>
   <div class="labs-grid">
@@ -120,7 +138,7 @@
   </div>
 </section>
 
-<section class="section labs-section">
+<section class="section labs-section" id="where">
   <span class="overline">Labs &amp; Projects</span>
   <h2>Where I Work</h2>
   <div class="labs-grid">
@@ -138,7 +156,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="articles">
   <span class="overline">Publications</span>
   <h2>Journal Articles</h2>
   <div class="pub-list reveal">
@@ -153,7 +171,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="chapters">
   <h2>Book Chapters</h2>
   <div class="pub-list reveal">
     <a class="pub-row-detail" href="https://www.e-elgar.com/shop/gbp/handbook-of-innovations-in-strategic-communication-9781035326471.html" target="_blank" rel="noopener noreferrer">
@@ -183,7 +201,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="conferences">
   <h2>Conference Presentations</h2>
   <div class="pub-list reveal">
     <div class="pub-row-detail">
@@ -261,7 +279,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="ongoing">
   <span class="overline">Work in Progress</span>
   <h2>Ongoing Research</h2>
   <div class="pub-list reveal">
@@ -319,5 +337,6 @@ window.addEventListener('scroll',()=>{document.querySelector('nav').classList.to
 const o=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
 </script>
+<script src="subnav.js" defer></script>
 </body>
 </html>
