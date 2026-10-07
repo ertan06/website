@@ -167,52 +167,102 @@
   <div class="strip-panel" id="skills-panel" inert>
     <div class="strip-panel-clip">
       <div class="strip-panel-inner">
-        <div class="cat-tiles" role="group" aria-label="Skill categories">
-        <button type="button" class="cat-tile" data-cat="statistics" aria-expanded="false" aria-controls="cat-statistics"><span class="cat-name">Statistics</span><span class="cat-count">3</span></button>
-        <button type="button" class="cat-tile" data-cat="qualitative" aria-expanded="false" aria-controls="cat-qualitative"><span class="cat-name">Qualitative</span><span class="cat-count">1</span></button>
-        <button type="button" class="cat-tile" data-cat="programming" aria-expanded="false" aria-controls="cat-programming"><span class="cat-name">Programming</span><span class="cat-count">2</span></button>
-        <button type="button" class="cat-tile" data-cat="ai" aria-expanded="false" aria-controls="cat-ai"><span class="cat-name">AI</span><span class="cat-count">2</span></button>
-        <button type="button" class="cat-tile" data-cat="biometrics" aria-expanded="false" aria-controls="cat-biometrics"><span class="cat-name">Biometrics</span><span class="cat-count">5</span></button>
-        <button type="button" class="cat-tile" data-cat="listening" aria-expanded="false" aria-controls="cat-listening"><span class="cat-name">Social Listening</span><span class="cat-count">4</span></button>
-        <button type="button" class="cat-tile" data-cat="visualization" aria-expanded="false" aria-controls="cat-visualization"><span class="cat-name">Visualization</span><span class="cat-count">4</span></button>
-        </div>
-        <div class="cat-details" aria-live="polite">
-        <ul class="cat-detail" id="cat-statistics" hidden>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">SP</span>SPSS</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">R</span>RStudio</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">Jm</span>Jamovi</li>
-        </ul>
-        <ul class="cat-detail" id="cat-qualitative" hidden>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">De</span>Dedoose</li>
-        </ul>
-        <ul class="cat-detail" id="cat-programming" hidden>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">Py</span>Python</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">HT</span>HTML</li>
-        </ul>
-        <ul class="cat-detail" id="cat-ai" hidden>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">Vu</span>Vurvey</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">Ol</span>LLMs with Ollama</li>
-        </ul>
-        <ul class="cat-detail" id="cat-biometrics" hidden>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">iM</span>iMotions</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">ET</span>Eye Tracking</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">GS</span>GSR</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">EE</span>EEG</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">EM</span>EMG</li>
-        </ul>
-        <ul class="cat-detail" id="cat-listening" hidden>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">NQ</span>Netbase Quid</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">Bw</span>BrandWatch</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">Sp</span>Sprinklr</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">VM</span>ViralMoment</li>
-        </ul>
-        <ul class="cat-detail" id="cat-visualization" hidden>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">Tb</span>Tableau</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">Cv</span>Canva</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">Ad</span>Adobe Creative Suite</li>
-          <li class="strip-pill"><span class="strip-mark" aria-hidden="true">MS</span>Microsoft Office</li>
-        </ul>
-        </div>
+        <div class="skill-tabs" role="group" aria-label="Filter skills">
+    <button type="button" class="skill-tab is-active" data-filter="all" aria-pressed="true">All <span>21</span></button>
+    <button type="button" class="skill-tab" data-filter="statistics" aria-pressed="false">Statistics <span>3</span></button>
+    <button type="button" class="skill-tab" data-filter="qualitative" aria-pressed="false">Qualitative <span>1</span></button>
+    <button type="button" class="skill-tab" data-filter="programming" aria-pressed="false">Programming <span>2</span></button>
+    <button type="button" class="skill-tab" data-filter="ai" aria-pressed="false">AI <span>2</span></button>
+    <button type="button" class="skill-tab" data-filter="biometrics" aria-pressed="false">Biometrics <span>5</span></button>
+    <button type="button" class="skill-tab" data-filter="listening" aria-pressed="false">Social Listening <span>4</span></button>
+    <button type="button" class="skill-tab" data-filter="visualization" aria-pressed="false">Visualization <span>4</span></button>
+  </div>
+        <ul class="skill-grid">
+      <li class="skill" data-cat="statistics">
+        <span class="skill-mark" aria-hidden="true">SP</span>
+        <span class="skill-text"><span class="skill-name">SPSS</span><span class="skill-cat">Statistics</span></span>
+      </li>
+      <li class="skill" data-cat="statistics">
+        <span class="skill-mark" aria-hidden="true">R</span>
+        <span class="skill-text"><span class="skill-name">RStudio</span><span class="skill-cat">Statistics</span></span>
+      </li>
+      <li class="skill" data-cat="statistics">
+        <span class="skill-mark" aria-hidden="true">Jm</span>
+        <span class="skill-text"><span class="skill-name">Jamovi</span><span class="skill-cat">Statistics</span></span>
+      </li>
+      <li class="skill" data-cat="qualitative">
+        <span class="skill-mark" aria-hidden="true">De</span>
+        <span class="skill-text"><span class="skill-name">Dedoose</span><span class="skill-cat">Qualitative</span></span>
+      </li>
+      <li class="skill" data-cat="programming">
+        <span class="skill-mark" aria-hidden="true">Py</span>
+        <span class="skill-text"><span class="skill-name">Python</span><span class="skill-cat">Programming</span></span>
+      </li>
+      <li class="skill" data-cat="programming">
+        <span class="skill-mark" aria-hidden="true">HT</span>
+        <span class="skill-text"><span class="skill-name">HTML</span><span class="skill-cat">Programming</span></span>
+      </li>
+      <li class="skill" data-cat="ai">
+        <span class="skill-mark" aria-hidden="true">Vu</span>
+        <span class="skill-text"><span class="skill-name">Vurvey</span><span class="skill-cat">AI</span></span>
+      </li>
+      <li class="skill" data-cat="ai">
+        <span class="skill-mark" aria-hidden="true">Ol</span>
+        <span class="skill-text"><span class="skill-name">LLMs with Ollama</span><span class="skill-cat">AI</span></span>
+      </li>
+      <li class="skill" data-cat="biometrics">
+        <span class="skill-mark" aria-hidden="true">iM</span>
+        <span class="skill-text"><span class="skill-name">iMotions</span><span class="skill-cat">Biometrics</span></span>
+      </li>
+      <li class="skill" data-cat="biometrics">
+        <span class="skill-mark" aria-hidden="true">ET</span>
+        <span class="skill-text"><span class="skill-name">Eye Tracking</span><span class="skill-cat">Biometrics</span></span>
+      </li>
+      <li class="skill" data-cat="biometrics">
+        <span class="skill-mark" aria-hidden="true">GS</span>
+        <span class="skill-text"><span class="skill-name">GSR</span><span class="skill-cat">Biometrics</span></span>
+      </li>
+      <li class="skill" data-cat="biometrics">
+        <span class="skill-mark" aria-hidden="true">EE</span>
+        <span class="skill-text"><span class="skill-name">EEG</span><span class="skill-cat">Biometrics</span></span>
+      </li>
+      <li class="skill" data-cat="biometrics">
+        <span class="skill-mark" aria-hidden="true">EM</span>
+        <span class="skill-text"><span class="skill-name">EMG</span><span class="skill-cat">Biometrics</span></span>
+      </li>
+      <li class="skill" data-cat="listening">
+        <span class="skill-mark" aria-hidden="true">NQ</span>
+        <span class="skill-text"><span class="skill-name">Netbase Quid</span><span class="skill-cat">Social Listening</span></span>
+      </li>
+      <li class="skill" data-cat="listening">
+        <span class="skill-mark" aria-hidden="true">Bw</span>
+        <span class="skill-text"><span class="skill-name">BrandWatch</span><span class="skill-cat">Social Listening</span></span>
+      </li>
+      <li class="skill" data-cat="listening">
+        <span class="skill-mark" aria-hidden="true">Sp</span>
+        <span class="skill-text"><span class="skill-name">Sprinklr</span><span class="skill-cat">Social Listening</span></span>
+      </li>
+      <li class="skill" data-cat="listening">
+        <span class="skill-mark" aria-hidden="true">VM</span>
+        <span class="skill-text"><span class="skill-name">ViralMoment</span><span class="skill-cat">Social Listening</span></span>
+      </li>
+      <li class="skill" data-cat="visualization">
+        <span class="skill-mark" aria-hidden="true">Tb</span>
+        <span class="skill-text"><span class="skill-name">Tableau</span><span class="skill-cat">Visualization</span></span>
+      </li>
+      <li class="skill" data-cat="visualization">
+        <span class="skill-mark" aria-hidden="true">Cv</span>
+        <span class="skill-text"><span class="skill-name">Canva</span><span class="skill-cat">Visualization</span></span>
+      </li>
+      <li class="skill" data-cat="visualization">
+        <span class="skill-mark" aria-hidden="true">Ad</span>
+        <span class="skill-text"><span class="skill-name">Adobe Creative Suite</span><span class="skill-cat">Visualization</span></span>
+      </li>
+      <li class="skill" data-cat="visualization">
+        <span class="skill-mark" aria-hidden="true">MS</span>
+        <span class="skill-text"><span class="skill-name">Microsoft Office</span><span class="skill-cat">Visualization</span></span>
+      </li>
+  </ul>
       </div>
     </div>
   </div>
