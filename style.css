@@ -167,6 +167,10 @@ footer p{font-size:.75rem;color:var(--muted)}
 .app-list li{margin-bottom:.35rem}
 @media(max-width:900px){.app-side{grid-template-columns:1fr}.app-thumb{border-right:none;border-bottom:1px solid var(--border)}}
 
+.teaching-split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.teaching-split .teaching-grid:not(.ta-grid){grid-template-columns:1fr}
+@media(max-width:900px){.teaching-split{grid-template-columns:1fr;gap:0}}
+
 /* Testimonials */
 .quote-group{margin-bottom:2rem}
 .quote-group>.course-code{display:block;margin-bottom:.75rem}
