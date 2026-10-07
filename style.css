@@ -171,6 +171,10 @@ footer p{font-size:.75rem;color:var(--muted)}
 .teaching-split .teaching-grid:not(.ta-grid){grid-template-columns:1fr}
 @media(max-width:900px){.teaching-split{grid-template-columns:1fr;gap:0}}
 
+.philosophy{max-width:900px}
+.philosophy p{font-size:1.05rem;line-height:1.9;color:var(--text2);font-weight:300;margin-bottom:1.25rem}
+.philosophy strong{font-weight:600;color:var(--text)}
+
 /* Testimonials */
 .quote-group{margin-bottom:2.75rem}
 .quote-group>.course-code{display:block;margin-bottom:1rem;font-size:.8rem;letter-spacing:.14em;color:var(--accent);padding-bottom:.6rem;border-bottom:2px solid var(--accent)}
