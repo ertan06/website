@@ -359,7 +359,11 @@ section[id],.app-card[id]{scroll-margin-top:136px}
 @media(prefers-reduced-motion:reduce){.skill,.skill-tab{transition:none}.skill:hover{transform:none}}
 
 /* Skills strip */
-.skills-strip{background:var(--bg)}
+.skills-strip{background:#e9f2f6;border-bottom:1px solid #d3e4ec}
+.skills-strip .strip-pill{background:#fff;border-color:#d3e4ec}
+.skills-strip .skill-tab{background:#fff;border-color:#d3e4ec}
+.skills-strip .skill-tab.is-active{background:var(--accent);border-color:var(--accent)}
+.skills-strip .skill{background:#fff;border-color:#d3e4ec}
 .strip-bar{max-width:1400px;margin:0 auto;padding:1.5rem 3rem;display:flex;align-items:center;gap:1.75rem}
 .strip-title{font-family:var(--serif);font-size:1.4rem;font-weight:400;letter-spacing:-.01em;color:var(--text);flex-shrink:0}
 .strip-pills{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
