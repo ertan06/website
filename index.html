@@ -229,10 +229,20 @@
   </div>
 </section>
 
-<section class="section skills-section" id="skills">
-  <span class="overline">Toolkit</span>
-  <h2>Skills</h2>
-  <div class="skill-tabs reveal" role="group" aria-label="Filter skills">
+<section class="skills-strip" id="skills">
+  <div class="strip-bar">
+    <h2 class="strip-title">Skills</h2>
+    <ul class="strip-pills">
+      <li class="strip-pill"><span class="strip-mark" aria-hidden="true">Py</span>Python</li>
+      <li class="strip-pill"><span class="strip-mark" aria-hidden="true">R</span>RStudio</li>
+      <li class="strip-pill"><span class="strip-mark" aria-hidden="true">SP</span>SPSS</li>
+    </ul>
+    <button type="button" class="strip-more" aria-expanded="false" aria-controls="skills-panel"><span class="strip-more-label">More</span> <span class="strip-more-count">+17</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+  </div>
+  <div class="strip-panel" id="skills-panel" inert>
+    <div class="strip-panel-clip">
+      <div class="strip-panel-inner">
+        <div class="skill-tabs" role="group" aria-label="Filter skills">
     <button type="button" class="skill-tab is-active" data-filter="all" aria-pressed="true">All <span>20</span></button>
     <button type="button" class="skill-tab" data-filter="statistics" aria-pressed="false">Statistics <span>3</span></button>
     <button type="button" class="skill-tab" data-filter="qualitative" aria-pressed="false">Qualitative <span>1</span></button>
@@ -242,7 +252,7 @@
     <button type="button" class="skill-tab" data-filter="listening" aria-pressed="false">Social Listening <span>4</span></button>
     <button type="button" class="skill-tab" data-filter="visualization" aria-pressed="false">Visualization <span>3</span></button>
   </div>
-  <ul class="skill-grid reveal">
+        <ul class="skill-grid">
       <li class="skill" data-cat="statistics">
         <span class="skill-mark" aria-hidden="true">SP</span>
         <span class="skill-text"><span class="skill-name">SPSS</span><span class="skill-cat">Statistics</span></span>
@@ -324,6 +334,9 @@
         <span class="skill-text"><span class="skill-name">Microsoft Office</span><span class="skill-cat">Visualization</span></span>
       </li>
   </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="cta-section">
