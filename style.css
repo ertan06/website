@@ -171,12 +171,12 @@ footer p{font-size:.75rem;color:var(--muted)}
 .teaching-split .teaching-grid:not(.ta-grid){grid-template-columns:1fr}
 @media(max-width:900px){.teaching-split{grid-template-columns:1fr;gap:0}}
 
-.philosophy-band{background:var(--accent);color:#fff;padding:5rem 3rem;margin-top:2rem}
-.philosophy{max-width:860px;margin:0 auto;text-align:center}
-.philosophy .overline{color:#a8c7fa}
-.philosophy h2{font-family:var(--serif);font-size:2.6rem;letter-spacing:-.02em;line-height:1.2;margin-bottom:2rem;color:#fff}
-.philosophy p{font-size:1.2rem;line-height:1.85;font-weight:300;color:rgba(255,255,255,.88);margin-bottom:1.5rem}
-.philosophy strong{font-weight:600;color:#fff;border-bottom:2px solid #a8c7fa;padding-bottom:1px}
+.philosophy-band{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:5rem 3rem;margin-top:2rem}
+.philosophy{max-width:820px;margin:0 auto;text-align:center}
+.philosophy .overline{color:var(--accent2)}
+.philosophy h2{font-family:var(--serif);font-size:2.6rem;letter-spacing:-.02em;line-height:1.2;margin-bottom:2rem;color:var(--text)}
+.philosophy p{font-size:1.2rem;line-height:1.85;font-weight:300;color:var(--text2);margin-bottom:1.5rem}
+.philosophy strong{font-weight:600;color:var(--text);border-bottom:2px solid var(--accent2);padding-bottom:1px}
 @media(max-width:900px){.philosophy-band{padding:3.5rem 1.5rem}.philosophy h2{font-size:2rem}.philosophy p{font-size:1.1rem}}
 
 /* Testimonials */
