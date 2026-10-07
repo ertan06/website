@@ -72,6 +72,20 @@ nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit
 @media(max-width:900px){.contact-card{margin-top:1.5rem}.contact-card .social-row{gap:.6rem}.contact-card .social-row a{width:42px;height:42px}}
 @media(prefers-reduced-motion:reduce){.contact-card .social-row a,.contact-card .social-row a::after{transition:none}}
 
+/* Education card */
+.edu-card{max-width:560px;padding:1.75rem 2rem;border:1px solid var(--border);border-radius:14px;background:var(--bg);transition:box-shadow .35s,border-color .35s}
+.edu-card:hover{border-color:#cfcfcc;box-shadow:0 12px 36px rgba(0,0,0,.06)}
+.section .edu-card h2{font-family:var(--serif);font-size:1.5rem;font-weight:400;letter-spacing:-.01em;margin-bottom:1.1rem}
+.edu-list{list-style:none;margin:0;padding:0}
+.edu-item{display:flex;align-items:center;gap:1rem;padding:.8rem .75rem;margin:0 -.75rem;transition:background .25s}
+.edu-item+.edu-item{border-top:1px solid var(--border)}
+.edu-item:hover{background:var(--bg2)}
+.edu-logo{display:flex;align-items:center;justify-content:center;width:34px;height:34px;flex-shrink:0}
+.edu-logo img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}
+.edu-text{display:flex;flex-direction:column;gap:.15rem}
+.edu-degree{font-family:var(--serif);font-size:1.05rem;color:var(--text);line-height:1.35}
+.edu-inst{font-size:.82rem;color:var(--muted)}
+
 /* Buttons */
 .btn-primary{display:inline-block;font-size:.82rem;font-weight:500;letter-spacing:.04em;color:#fff;background:var(--accent);padding:.85rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s}
 .btn-primary:hover{background:#0f4a64;box-shadow:0 4px 20px rgba(21,96,130,.2)}
