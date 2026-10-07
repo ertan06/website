@@ -153,6 +153,51 @@
   </div>
 </section>
 
+<section class="section skills-section" id="skills">
+  <span class="overline">Toolkit</span>
+  <h2>Skills</h2>
+  <div class="skill-tabs reveal" role="group" aria-label="Filter skills">
+    <button type="button" class="skill-tab is-active" data-filter="all" aria-pressed="true">All <span>8</span></button>
+    <button type="button" class="skill-tab" data-filter="analysis" aria-pressed="false">Programming &amp; Statistics <span>3</span></button>
+    <button type="button" class="skill-tab" data-filter="listening" aria-pressed="false">Social Listening <span>4</span></button>
+    <button type="button" class="skill-tab" data-filter="ai" aria-pressed="false">Local AI <span>1</span></button>
+  </div>
+  <ul class="skill-grid reveal">
+      <li class="skill" data-cat="analysis">
+        <span class="skill-mark" aria-hidden="true">Py</span>
+        <span class="skill-text"><span class="skill-name">Python</span><span class="skill-cat">Analysis</span></span>
+      </li>
+      <li class="skill" data-cat="analysis">
+        <span class="skill-mark" aria-hidden="true">R</span>
+        <span class="skill-text"><span class="skill-name">RStudio</span><span class="skill-cat">Analysis</span></span>
+      </li>
+      <li class="skill" data-cat="analysis">
+        <span class="skill-mark" aria-hidden="true">SP</span>
+        <span class="skill-text"><span class="skill-name">SPSS</span><span class="skill-cat">Analysis</span></span>
+      </li>
+      <li class="skill" data-cat="listening">
+        <span class="skill-mark" aria-hidden="true">Sp</span>
+        <span class="skill-text"><span class="skill-name">Sprinklr</span><span class="skill-cat">Social Listening</span></span>
+      </li>
+      <li class="skill" data-cat="listening">
+        <span class="skill-mark" aria-hidden="true">Bw</span>
+        <span class="skill-text"><span class="skill-name">BrandWatch</span><span class="skill-cat">Social Listening</span></span>
+      </li>
+      <li class="skill" data-cat="listening">
+        <span class="skill-mark" aria-hidden="true">NQ</span>
+        <span class="skill-text"><span class="skill-name">Netbase Quid</span><span class="skill-cat">Social Listening</span></span>
+      </li>
+      <li class="skill" data-cat="listening">
+        <span class="skill-mark" aria-hidden="true">VM</span>
+        <span class="skill-text"><span class="skill-name">ViralMoment</span><span class="skill-cat">Social Listening</span></span>
+      </li>
+      <li class="skill" data-cat="ai">
+        <span class="skill-mark" aria-hidden="true">Ol</span>
+        <span class="skill-text"><span class="skill-name">Ollama</span><span class="skill-cat">Local AI</span></span>
+      </li>
+  </ul>
+</section>
+
 <section class="section">
   <span class="overline">Selected Work</span>
   <h2>Recent Publications</h2>
@@ -254,5 +299,6 @@ window.addEventListener('scroll',()=>{document.querySelector('nav').classList.to
 const o=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
 </script>
+<script src="skills.js" defer></script>
 </body>
 </html>
