@@ -117,22 +117,32 @@
 
 <section class="section" id="ai-chatbots">
   <h2>AI Chatbots</h2>
-  <div class="app-card reveal">
-    <img class="app-img" src="portfolio/chatbot-learning.webp" alt="Chat with a course chatbot that gives a student structured information about South Korea's media influence and suggests research directions" loading="lazy">
-    <div class="app-body">
-      <span class="course-code">Teaching &middot; JOUR 312</span>
-      <h3 class="course-name">AI Chatbot for Learning</h3>
-      <p>In the course I teach, International Mass Communication (JOUR 312), students choose a country to research in detail, focusing on its laws, media culture, and regional or global influence. Before they start writing their papers, they interact with a chatbot specifically prompted to provide them with structured information about the country, along with possible theories they can integrate into their papers.</p>
+  <div class="app-card chatbots reveal">
+    <div class="shot-row">
+      <button type="button" class="shot" data-lightbox data-src="portfolio/chatbot-learning.webp" data-alt="Chat with a course chatbot that gives a student structured information about South Korea's media influence and suggests research directions" data-caption="AI Chatbot for Learning" aria-label="Enlarge screenshot: AI Chatbot for Learning">
+        <img src="portfolio/chatbot-learning.webp" alt="Chat with a course chatbot that gives a student structured information about South Korea's media influence and suggests research directions" loading="lazy">
+        <span class="shot-cap">AI Chatbot for Learning</span>
+        <svg class="shot-zoom" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M11 8v6M8 11h6"/></svg>
+      </button>
+      <button type="button" class="shot" data-lightbox data-src="portfolio/chatbot-experiment.webp" data-alt="uChat flow builder showing the branching conversation structure of the experimental chatbot" data-caption="Chatbot as Experimental Stimuli (uChat flow)" aria-label="Enlarge screenshot: Chatbot as Experimental Stimuli">
+        <img src="portfolio/chatbot-experiment.webp" alt="uChat flow builder showing the branching conversation structure of the experimental chatbot" loading="lazy">
+        <span class="shot-cap">Chatbot as Experimental Stimuli</span>
+        <svg class="shot-zoom" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M11 8v6M8 11h6"/></svg>
+      </button>
     </div>
-  </div>
-  <div class="app-card reveal" style="margin-top:2rem">
-    <img class="app-img" src="portfolio/chatbot-experiment.webp" alt="uChat flow builder showing the branching conversation structure of the experimental chatbot" loading="lazy">
-    <div class="app-body">
-      <span class="course-code">uChat &middot; Chatwoot &middot; OpenAI API</span>
-      <h3 class="course-name">Chatbot as Experimental Stimuli</h3>
-      <p>For an experiment with my advisor, Dr. Linwan Wu, I built a chatbot to test how design features shape users' perceptions and wellbeing. It runs on uChat and Chatwoot with OpenAI integration and gives users structured, supportive answers in real time.</p>
-      <p><em>Chatbot screenshots will be added once the paper is published.</em></p>
-      <p class="app-skills">Conversational design &middot; OpenAI API integration &middot; Prompt design &middot; Experimental research</p>
+    <div class="sub-grid">
+      <div class="subcard">
+        <span class="course-code">Teaching &middot; JOUR 312</span>
+        <h3 class="course-name">AI Chatbot for Learning</h3>
+        <p>In the course I teach, International Mass Communication (JOUR 312), students choose a country to research in detail, focusing on its laws, media culture, and regional or global influence. Before they start writing their papers, they interact with a chatbot specifically prompted to provide them with structured information about the country, along with possible theories they can integrate into their papers.</p>
+      </div>
+      <div class="subcard">
+        <span class="course-code">uChat &middot; Chatwoot &middot; OpenAI API</span>
+        <h3 class="course-name">Chatbot as Experimental Stimuli</h3>
+        <p>For an experiment with my advisor, Dr. Linwan Wu, I built a chatbot to test how design features shape users' perceptions and wellbeing. It runs on uChat and Chatwoot with OpenAI integration and gives users structured, supportive answers in real time.</p>
+        <p><em>Chatbot screenshots will be added once the paper is published.</em></p>
+        <p class="app-skills">Conversational design &middot; OpenAI API integration &middot; Prompt design &middot; Experimental research</p>
+      </div>
     </div>
   </div>
   <div class="coming-soon reveal" style="margin-top:2rem">
@@ -159,5 +169,6 @@ const o=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersec
 document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
 </script>
 <script src="subnav.js" defer></script>
+<script src="lightbox.js" defer></script>
 </body>
 </html>
