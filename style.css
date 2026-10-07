@@ -58,6 +58,20 @@ nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit
 .orcid-icon{display:block;width:18px;height:18px;background:var(--text2);-webkit-mask:url(orcid-mask.png) center/contain no-repeat;mask:url(orcid-mask.png) center/contain no-repeat;transition:background .3s}
 .hero-icons a:hover .orcid-icon,.social-row a:hover .orcid-icon{background:var(--bg)}
 
+.contact-card{max-width:420px;margin:2rem auto 0;padding:1.5rem 1.5rem 1.75rem;border:1px solid var(--border);border-radius:14px;background:var(--bg);text-align:center;transition:box-shadow .35s,border-color .35s}
+.contact-card:hover{border-color:#cfcfcc;box-shadow:0 12px 36px rgba(0,0,0,.07)}
+.contact-title{font-family:var(--serif);font-size:1.3rem;font-weight:400;letter-spacing:-.01em;margin-bottom:1.1rem;color:var(--text)}
+.contact-card .social-row{margin:0 auto;max-width:none;gap:.85rem}
+.contact-card .social-row a{position:relative;width:46px;height:46px;transition:all .3s,transform .3s}
+.contact-card .social-row a:hover,.contact-card .social-row a:focus-visible{transform:translateY(-4px);box-shadow:0 8px 18px rgba(26,58,92,.22)}
+.contact-card .social-row a:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+.contact-card .social-row svg{width:19px;height:19px}
+.contact-card .orcid-icon{width:24px;height:24px}
+.contact-card .social-row a::after{content:attr(data-label);position:absolute;left:50%;top:calc(100% + 10px);transform:translate(-50%,-4px);padding:.3rem .6rem;border-radius:6px;background:var(--text);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.03em;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.contact-card .social-row a:hover::after,.contact-card .social-row a:focus-visible::after{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.contact-card{margin-top:1.5rem}.contact-card .social-row{gap:.6rem}.contact-card .social-row a{width:42px;height:42px}}
+@media(prefers-reduced-motion:reduce){.contact-card .social-row a,.contact-card .social-row a::after{transition:none}}
+
 /* Buttons */
 .btn-primary{display:inline-block;font-size:.82rem;font-weight:500;letter-spacing:.04em;color:#fff;background:var(--accent);padding:.85rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s}
 .btn-primary:hover{background:#0f2840;box-shadow:0 4px 20px rgba(26,58,92,.2)}
