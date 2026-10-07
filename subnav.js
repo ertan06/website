@@ -6,7 +6,7 @@
   var indicator=list.querySelector('.subnav-indicator');
   var progress=bar.querySelector('.subnav-progress');
   var topBtn=bar.querySelector('.subnav-top');
-  var content=document.getElementById('content');
+  var content=document.getElementById('content')||document.body;
   var targets=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var STICK=80, active=-1, ticking=false;

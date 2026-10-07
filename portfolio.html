@@ -31,7 +31,7 @@
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" class="nav-home" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-6h4v6"/></svg></a></li>
       <li><a href="research.html">Research</a></li>
       <li><a href="teaching.html">Teaching</a></li>
       <li><a href="portfolio.html" class="active">Portfolio</a></li>
@@ -47,9 +47,24 @@
   <p>Apps, dashboards, and visualizations that turn data into clear stories, along with my work in AI, from podcasts to chatbots.</p>
 </div>
 
-<section class="section" style="padding-top:2rem">
+<div class="subnav" aria-label="Jump to a section">
+  <div class="subnav-inner">
+    <span class="subnav-label">Jump to</span>
+    <ul class="subnav-links">
+      <li><a href="#applications">Applications</a></li>
+      <li><a href="#social-pulse">Social Pulse</a></li>
+      <li><a href="#smil-board">SMIL Board</a></li>
+      <li><a href="#data-viz">Data Visualization</a></li>
+      <li class="subnav-indicator" aria-hidden="true"></li>
+    </ul>
+    <button type="button" class="subnav-top" aria-label="Back to top">&uarr; Top</button>
+  </div>
+  <div class="subnav-progress" aria-hidden="true"></div>
+</div>
+
+<section class="section" id="applications" style="padding-top:2rem">
   <h2>Applications</h2>
-  <div class="app-card reveal">
+  <div class="app-card reveal" id="social-pulse">
     <img class="app-img" src="portfolio/sports-social-pulse.webp" alt="College Sports Social Pulse website: Where rankings have a heartbeat" loading="lazy">
     <div class="app-body">
       <span class="course-code">Python &middot; Social Listening API</span>
@@ -62,7 +77,7 @@
     </div>
   </div>
 
-  <div class="app-card reveal" style="margin-top:2rem">
+  <div class="app-card reveal" id="smil-board" style="margin-top:2rem">
     <img class="app-img" src="portfolio/smil-board.webp" alt="SMIL Board dashboard showing news metrics, word cloud, emerging topics, and coverage map" loading="lazy">
     <div class="app-body">
       <span class="course-code">Streamlit &middot; Plotly &middot; VADER &middot; NewsAPI</span>
@@ -75,7 +90,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="data-viz">
   <h2>Data Visualization</h2>
   <div class="app-card app-side reveal">
     <a class="app-thumb" href="portfolio/ai-knowledge-divide-full.webp" target="_blank" rel="noopener noreferrer">
@@ -117,5 +132,6 @@ window.addEventListener('scroll',()=>{document.querySelector('nav').classList.to
 const o=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
 </script>
+<script src="subnav.js" defer></script>
 </body>
 </html>

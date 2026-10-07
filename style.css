@@ -43,6 +43,18 @@ nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit
 .hero-icons svg.stroke-icon{fill:none;stroke:var(--text2);stroke-width:1.5}
 .hero-icons a:hover svg.stroke-icon{fill:none;stroke:var(--bg)}
 
+.nav-links a.nav-home{display:inline-flex;align-items:center}
+.nav-links a.nav-home svg{width:21px;height:21px;stroke:currentColor;stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* Social row (about page) */
+.social-row{display:flex;justify-content:center;gap:1.25rem;margin-top:1.75rem;max-width:640px}
+.social-row a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--bg);transition:all .3s}
+.social-row a:hover{border-color:var(--accent);background:var(--accent)}
+.social-row svg{width:17px;height:17px;fill:var(--text2);stroke:none;transition:all .3s}
+.social-row svg.stroke-icon{fill:none;stroke:var(--text2);stroke-width:1.5}
+.social-row a:hover svg{fill:var(--bg);stroke:none}
+.social-row a:hover svg.stroke-icon{fill:none;stroke:var(--bg)}
+
 /* Buttons */
 .btn-primary{display:inline-block;font-size:.82rem;font-weight:500;letter-spacing:.04em;color:#fff;background:var(--accent);padding:.85rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s}
 .btn-primary:hover{background:#0f2840;box-shadow:0 4px 20px rgba(26,58,92,.2)}
@@ -221,7 +233,7 @@ footer p{font-size:.75rem;color:var(--muted)}
 .subnav.is-stuck .subnav-top{opacity:1;transform:none;pointer-events:auto}
 .subnav-top:hover{border-color:var(--text);color:var(--text)}
 .subnav-progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent2);transform:scaleX(0);transform-origin:left;opacity:.35;will-change:transform}
-section[id]{scroll-margin-top:136px}
+section[id],.app-card[id]{scroll-margin-top:136px}
 @media(max-width:900px){.subnav-inner{padding:0 1rem;gap:.75rem}.subnav-label{display:none}.subnav-top{display:none}.subnav-links a{padding:0 .7rem}}
 @media(prefers-reduced-motion:reduce){.subnav-indicator,.subnav-top,.subnav{transition:none}}
 
