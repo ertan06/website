@@ -283,6 +283,9 @@ footer p{font-size:.75rem;color:var(--muted)}
 .shot-bar i{width:8px;height:8px;border-radius:50%;background:#d9d9d6}
 .shot-bar em{margin-left:auto;font-style:normal;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);opacity:.75;transition:opacity .3s}
 .shot:hover .shot-bar em{opacity:1}
+.shot-view.contain{background:var(--bg2)}
+.shot-view.contain::after{display:none}
+.shot-view.contain img{object-fit:contain;object-position:center}
 .shot-view{height:210px}
 .shot-set .shot.wide .shot-view{height:170px}
 .shot-view{position:relative;display:block;height:220px;overflow:hidden}
