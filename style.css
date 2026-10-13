@@ -327,6 +327,9 @@ footer p{font-size:.75rem;color:var(--muted)}
 .hb-page:not(.is-active) .shot-bar em{opacity:0}
 .hb-page:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
 .hb-controls[hidden]{display:none}
+.hb-landscape .hb-viewport{aspect-ratio:2.1/1}
+.hb-landscape .hb-page{width:calc(100%/1.18);aspect-ratio:1.8/1}
+.cb-text .course-code+p{margin-top:.75rem}
 .hb-wide .hb-viewport{aspect-ratio:2.5/1}
 .hb-wide .hb-page{width:100%;aspect-ratio:2.5/1}
 .hb-controls{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-top:1.25rem}
