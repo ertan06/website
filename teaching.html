@@ -44,7 +44,7 @@
     }
   </style>
 </head>
-<body class="has-side-nav">
+<body>
 
 <nav>
   <div class="nav-inner">
@@ -77,17 +77,6 @@
 </section>
 
 <div id="content">
-<nav class="side-nav" aria-label="Jump to a section">
-  <span class="side-label">Jump to</span>
-  <ul>
-      <li><a href="#experience"><span class="side-dot"></span><span class="side-text">Experience</span></a></li>
-      <li><a href="#philosophy"><span class="side-dot"></span><span class="side-text">Teaching Philosophy</span></a></li>
-      <li><a href="#testimonials"><span class="side-dot"></span><span class="side-text">Student Testimonials</span></a></li>
-      <li><a href="#awards"><span class="side-dot"></span><span class="side-text">Awards</span></a></li>
-      <li><a href="#development"><span class="side-dot"></span><span class="side-text">Professional Development</span></a></li>
-  </ul>
-</nav>
-
 <div class="subnav" aria-label="Jump to a section">
   <div class="subnav-inner">
     <span class="subnav-label">Jump to</span>
@@ -336,6 +325,5 @@ const o=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersec
 document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
 </script>
 <script src="subnav.js" defer></script>
-<script src="sidenav.js" defer></script>
 </body>
 </html>
