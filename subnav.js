@@ -13,7 +13,7 @@
 
   function moveIndicator(i){
     if(i<0){indicator.style.opacity='0';return}
-    var a=links[i];
+    var a=links[i].parentElement;
     indicator.style.opacity='1';
     indicator.style.width=a.offsetWidth+'px';
     indicator.style.transform='translateX('+a.offsetLeft+'px)';
@@ -26,7 +26,7 @@
     });
     moveIndicator(i);
     if(i>=0){
-      var a=links[i];
+      var a=links[i].parentElement;
       list.scrollTo({left:a.offsetLeft-(list.clientWidth-a.offsetWidth)/2,behavior:reduce?'auto':'smooth'});
     }
   }

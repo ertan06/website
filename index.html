@@ -86,6 +86,23 @@
   </a>
 </section>
 
+<div class="subnav" aria-label="Jump to a section">
+  <div class="subnav-inner">
+    <span class="subnav-label">Jump to</span>
+    <ul class="subnav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#awards">Awards &amp; Grants</a></li>
+      <li class="subnav-indicator" aria-hidden="true"></li>
+    </ul>
+    <button type="button" class="subnav-top" aria-label="Back to top">&uarr; Top</button>
+  </div>
+  <div class="subnav-progress" aria-hidden="true"></div>
+</div>
+
 <section class="section" id="about">
   <div class="two-col">
     <div class="col-left reveal">
@@ -99,7 +116,7 @@
   </div>
 </section>
 
-<section class="edu-section">
+<section class="edu-section" id="education">
   <div class="edu-card edu-wide reveal">
     <ul class="edu-list" aria-label="Education">
       <li class="edu-item">
@@ -122,7 +139,7 @@
   </div>
 </section>
 
-<section class="section labs-section">
+<section class="section labs-section" id="experience">
   <span class="overline">Professional Experience</span>
   <h2>Where I Work</h2>
   <div class="labs-grid labs-grid-4">
@@ -268,7 +285,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="publications">
   <span class="overline">Selected Work</span>
   <h2>Recent Publications</h2>
   <div class="pub-list reveal">
@@ -296,7 +313,7 @@
   </div>
 </section>
 
-<section class="section labs-section">
+<section class="section labs-section" id="awards">
   <h2>Awards &amp; Grants</h2>
   <div class="awards-list">
     <div class="award reveal">
@@ -369,6 +386,7 @@ window.addEventListener('scroll',()=>{document.querySelector('nav').classList.to
 const o=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
 </script>
+<script src="subnav.js" defer></script>
 <script src="skills.js" defer></script>
 </body>
 </html>
