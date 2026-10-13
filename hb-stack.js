@@ -5,6 +5,7 @@
   var next=stack.querySelector('[data-dir="1"]');
   var count=stack.querySelector('.stack-count');
   var idx=0,startX=null,swiped=false;
+  if(pages.length<2){var ctl=stack.querySelector('.hb-controls');if(ctl)ctl.hidden=true}
 
   function render(){
     pages.forEach(function(p,i){
