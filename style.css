@@ -437,7 +437,8 @@ section[id],.app-card[id],.app-item[id],.cb-row[id],.contact-card[id]{scroll-mar
 @media(max-width:900px){.strip-bar{padding:1.25rem 1.5rem;flex-wrap:wrap;gap:1rem}.strip-pills{flex-basis:100%;order:3}.strip-more{margin-left:0}.strip-panel-inner{padding:.5rem 1.5rem 2rem}}
 @media(prefers-reduced-motion:reduce){.strip-panel,.strip-panel-inner,.strip-more svg{transition:none}.strip-more{animation:none}}
 
-/* Side nav (portfolio) */
+/* Side nav */
+.portfolio-body .app-card{max-width:1100px}
 .side-nav{position:fixed;left:0;right:auto;width:auto;top:50%;z-index:80;display:flex;flex-direction:column;gap:.6rem;padding:.9rem 1rem .9rem 1.25rem;opacity:0;transform:translateY(-50%);pointer-events:none;transition:opacity .35s ease}
 .side-nav.is-visible{opacity:1;transform:translateY(-50%);pointer-events:auto}
 .side-label{display:flex;align-items:center;gap:.6rem;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
@@ -452,14 +453,14 @@ section[id],.app-card[id],.app-item[id],.cb-row[id],.contact-card[id]{scroll-mar
 .side-nav a.is-active .side-dot{width:28px;background:var(--accent)}
 .side-nav a:focus-visible{outline:2px solid var(--accent2);outline-offset:3px;border-radius:4px}
 @media(min-width:901px){
-  .portfolio-page .subnav{transition:opacity .35s ease,visibility 0s linear .35s,box-shadow .3s}
-  .portfolio-page .subnav.is-morphed{opacity:0;visibility:hidden;pointer-events:none}
-  .portfolio-page .subnav.is-morphed .subnav-links,.portfolio-page .subnav.is-morphed .subnav-label,.portfolio-page .subnav.is-morphed .subnav-progress{opacity:0}
-  .portfolio-page .side-nav:not(.is-visible){transition:none}
-  .portfolio-page .subnav.is-flipping .subnav-links{overflow:visible}
-  .portfolio-page .subnav:not(.is-morphed){transition:opacity .35s ease,visibility 0s,box-shadow .3s}
-  .portfolio-page .subnav-top{display:none}
-  .portfolio-page .section{padding-left:max(3rem,calc(15rem - max(0px,(100vw - 1400px) / 2)))}
+  .has-side-nav .subnav{transition:opacity .35s ease,visibility 0s linear .35s,box-shadow .3s}
+  .has-side-nav .subnav.is-morphed{opacity:0;visibility:hidden;pointer-events:none}
+  .has-side-nav .subnav.is-morphed .subnav-links,.has-side-nav .subnav.is-morphed .subnav-label,.has-side-nav .subnav.is-morphed .subnav-progress{opacity:0}
+  .has-side-nav .side-nav:not(.is-visible){transition:none}
+  .has-side-nav .subnav.is-flipping .subnav-links{overflow:visible}
+  .has-side-nav .subnav:not(.is-morphed){transition:opacity .35s ease,visibility 0s,box-shadow .3s}
+  .has-side-nav .subnav-top{display:none}
+  .has-side-nav .section,.has-side-nav .philosophy-band{padding-left:max(3rem,calc(15rem - max(0px,(100vw - 1400px) / 2)))}
 }
 @media(max-width:900px){.side-nav{display:none}}
 @media(prefers-reduced-motion:reduce){.side-nav,.side-dot,.side-nav a{transition:none}.side-label::before{animation:none}}

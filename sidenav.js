@@ -7,7 +7,7 @@
   var sideExtra=[side.querySelector('.side-label')];
   var barLabel=bar.querySelector('.subnav-label');
   var targets=sideLinks.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
-  var hero=document.querySelector('.portfolio-hero');
+  var hero=document.querySelector('.portfolio-hero,.teaching-hero,.research-hero');
   var wide=window.matchMedia('(min-width: 901px)');
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var mode='h',active=-1,ticking=false;
