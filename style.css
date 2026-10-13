@@ -453,13 +453,7 @@ section[id],.app-card[id],.app-item[id],.cb-row[id],.contact-card[id]{scroll-mar
 .side-nav a.is-active .side-dot{width:28px;background:var(--accent)}
 .side-nav a:focus-visible{outline:2px solid var(--accent2);outline-offset:3px;border-radius:4px}
 @media(min-width:901px){
-  .has-side-nav .subnav{transition:opacity .35s ease,visibility 0s linear .35s,box-shadow .3s}
-  .has-side-nav .subnav.is-morphed{opacity:0;visibility:hidden;pointer-events:none}
-  .has-side-nav .subnav.is-morphed .subnav-links,.has-side-nav .subnav.is-morphed .subnav-label,.has-side-nav .subnav.is-morphed .subnav-progress{opacity:0}
-  .has-side-nav .side-nav:not(.is-visible){transition:none}
-  .has-side-nav .subnav.is-flipping .subnav-links{overflow:visible}
-  .has-side-nav .subnav:not(.is-morphed){transition:opacity .35s ease,visibility 0s,box-shadow .3s}
-  .has-side-nav .subnav-top{display:none}
+  .has-side-nav .subnav{display:none}
   .has-side-nav .section,.has-side-nav .philosophy-band{padding-left:max(3rem,calc(15rem - max(0px,(100vw - 1400px) / 2)))}
 }
 @media(max-width:900px){.side-nav{display:none}}
