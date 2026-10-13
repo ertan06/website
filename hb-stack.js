@@ -1,6 +1,4 @@
-(function(){
-  var stack=document.getElementById('hbStack');
-  if(!stack)return;
+[].slice.call(document.querySelectorAll('.hb-stack')).forEach(function(stack){
   var viewport=stack.querySelector('.hb-viewport');
   var pages=[].slice.call(stack.querySelectorAll('.hb-page'));
   var prev=stack.querySelector('[data-dir="-1"]');
@@ -47,4 +45,4 @@
   });
   viewport.addEventListener('pointercancel',function(){startX=null});
   render();
-})();
+});
