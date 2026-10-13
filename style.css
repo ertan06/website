@@ -283,9 +283,7 @@ footer p{font-size:.75rem;color:var(--muted)}
 .shot-bar i{width:8px;height:8px;border-radius:50%;background:#d9d9d6}
 .shot-bar em{margin-left:auto;font-style:normal;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);opacity:.75;transition:opacity .3s}
 .shot:hover .shot-bar em{opacity:1}
-.shot-set{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-.shot-set .shot.wide{grid-column:1/-1}
-.shot-set .shot-view{height:210px}
+.shot-view{height:210px}
 .shot-set .shot.wide .shot-view{height:170px}
 .shot-view{position:relative;display:block;height:220px;overflow:hidden}
 .shot-view::after{content:'';position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(to top,#fff,rgba(255,255,255,0))}
@@ -310,6 +308,26 @@ footer p{font-size:.75rem;color:var(--muted)}
 .lb-count{position:absolute;top:1.6rem;left:1.5rem;color:rgba(255,255,255,.7);font-size:.75rem;font-weight:600;letter-spacing:.12em}
 @media(max-width:900px){.lb{padding:4rem 1rem 4rem}.lb-prev{left:.5rem}.lb-next{right:.5rem}}
 @media(prefers-reduced-motion:reduce){.lb,.lb-img,.lb-cap,.shot,.shot-view img{transition:none}}
+
+/* Health Bot stack */
+.hb-stack{width:100%;max-width:540px;margin:0 auto;outline:none}
+.hb-viewport{position:relative;width:100%;aspect-ratio:1.7/1;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.hb-page{position:absolute;top:0;left:0;right:0;margin:0 auto;width:calc(100%/1.4);aspect-ratio:5/4.1;display:flex;flex-direction:column;padding:0;text-align:left;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.08);transform:translateX(calc(var(--o,0)*14%)) scale(calc(1 - var(--a,0)*.06));transition:transform .6s cubic-bezier(.4,0,.2,1),opacity .6s ease,box-shadow .6s ease;cursor:pointer}
+.hb-page .shot-view{flex:1;min-height:0;height:auto}
+.hb-page.is-active{cursor:zoom-in;box-shadow:0 18px 46px rgba(0,0,0,.16)}
+.hb-page.is-far{opacity:0;pointer-events:none}
+.hb-page:not(.is-active) .shot-view::after{display:none}
+.hb-page:not(.is-active) .shot-bar em{opacity:0}
+.hb-page:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+.hb-controls{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-top:1.25rem}
+.stack-btn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);cursor:pointer;transition:all .3s}
+.stack-btn svg{width:15px;height:15px;stroke:var(--text2);stroke-width:1.75;fill:none;transition:stroke .3s}
+.stack-btn:hover:not(:disabled){border-color:var(--accent);background:var(--accent)}
+.stack-btn:hover:not(:disabled) svg{stroke:var(--bg)}
+.stack-btn:disabled{opacity:.35;cursor:default}
+.stack-btn:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+.stack-count{margin-left:.5rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){.hb-page{transition:none}}
 
 /* See More */
 .see-more-btn{display:inline-block;margin-top:1.5rem;font-size:.82rem;font-weight:500;color:var(--accent2);background:none;border:1px solid var(--border);padding:.6rem 1.5rem;border-radius:6px;cursor:pointer;transition:all .3s;letter-spacing:.04em}
