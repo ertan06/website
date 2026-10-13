@@ -438,11 +438,8 @@ section[id],.app-card[id],.app-item[id],.cb-row[id],.contact-card[id]{scroll-mar
 @media(prefers-reduced-motion:reduce){.strip-panel,.strip-panel-inner,.strip-more svg{transition:none}.strip-more{animation:none}}
 
 /* Side nav (portfolio) */
-.side-nav{position:fixed;left:0;top:50%;z-index:80;display:flex;flex-direction:column;gap:.6rem;padding:.9rem 1rem .9rem 1.25rem;opacity:0;transform:translate(-14px,-50%);pointer-events:none;transition:opacity .4s ease,transform .4s ease}
+.side-nav{position:fixed;left:0;top:50%;z-index:80;display:flex;flex-direction:column;gap:.6rem;padding:.9rem 1rem .9rem 1.25rem;opacity:0;transform:translateY(-50%);pointer-events:none;transition:opacity .35s ease}
 .side-nav.is-visible{opacity:1;transform:translateY(-50%);pointer-events:auto}
-.side-nav li{opacity:0;transform:translateX(-12px);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
-.side-nav.is-visible li{opacity:1;transform:none}
-.side-nav.is-visible li:nth-child(1){transition-delay:.05s}.side-nav.is-visible li:nth-child(2){transition-delay:.1s}.side-nav.is-visible li:nth-child(3){transition-delay:.15s}.side-nav.is-visible li:nth-child(4){transition-delay:.2s}.side-nav.is-visible li:nth-child(5){transition-delay:.25s}.side-nav.is-visible li:nth-child(6){transition-delay:.3s}.side-nav.is-visible li:nth-child(7){transition-delay:.35s}
 .side-label{display:flex;align-items:center;gap:.6rem;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
 .side-label::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;animation:sn-pulse 1.8s ease-out infinite}
 .side-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
@@ -455,12 +452,17 @@ section[id],.app-card[id],.app-item[id],.cb-row[id],.contact-card[id]{scroll-mar
 .side-nav a.is-active .side-dot{width:28px;background:var(--accent)}
 .side-nav a:focus-visible{outline:2px solid var(--accent2);outline-offset:3px;border-radius:4px}
 @media(min-width:901px){
-  .portfolio-page .subnav{position:relative;top:auto}
+  .portfolio-page .subnav{transition:opacity .35s ease,visibility 0s linear .35s,box-shadow .3s}
+  .portfolio-page .subnav.is-morphed{opacity:0;visibility:hidden;pointer-events:none}
+  .portfolio-page .subnav.is-morphed .subnav-links,.portfolio-page .subnav.is-morphed .subnav-label,.portfolio-page .subnav.is-morphed .subnav-progress{opacity:0}
+  .portfolio-page .side-nav:not(.is-visible){transition:none}
+  .portfolio-page .subnav.is-flipping .subnav-links{overflow:visible}
+  .portfolio-page .subnav:not(.is-morphed){transition:opacity .35s ease,visibility 0s,box-shadow .3s}
   .portfolio-page .subnav-top{display:none}
   .portfolio-page .section{padding-left:max(3rem,calc(15rem - max(0px,(100vw - 1400px) / 2)))}
 }
 @media(max-width:900px){.side-nav{display:none}}
-@media(prefers-reduced-motion:reduce){.side-nav,.side-dot,.side-nav a,.side-nav li{transition:none}.side-label::before{animation:none}}
+@media(prefers-reduced-motion:reduce){.side-nav,.side-dot,.side-nav a{transition:none}.side-label::before{animation:none}}
 
 /* Scroll Reveal */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
