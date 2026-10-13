@@ -8,7 +8,8 @@
   var active=-1,ticking=false;
   function update(){
     ticking=false;
-    var past=hero?window.scrollY>hero.offsetHeight*0.6:window.scrollY>200;
+    var bar=document.querySelector('.subnav');
+    var past=bar?bar.getBoundingClientRect().bottom<90:window.scrollY>200;
     nav.classList.toggle('is-visible',past);
     var idx=-1;
     targets.forEach(function(t,n){if(t&&t.getBoundingClientRect().top<=180)idx=n});
