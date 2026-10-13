@@ -272,6 +272,9 @@ footer p{font-size:.75rem;color:var(--muted)}
 .chatbots{max-width:1100px}
 .cb-row{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2rem}
 .cb-row+.cb-row{border-top:1px solid var(--border)}
+.cb-stacked{grid-template-columns:1fr;gap:2rem;padding:2.25rem 2rem}
+.cb-stacked .hb-stack{max-width:760px}
+.cb-stacked .cb-text{max-width:820px;margin:0 auto;width:100%}
 .cb-text .course-code{display:block}
 .cb-text h3{margin:.35rem 0 .9rem;font-size:1.3rem}
 .cb-text p{font-size:.92rem;line-height:1.8;color:var(--text2);font-weight:300;margin-bottom:.9rem}
