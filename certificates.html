@@ -23,6 +23,15 @@
     .cert-page{padding-top:calc(80px + 2.5rem)}
     .back-home{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;margin-bottom:1.25rem}
     .back-home:hover{color:var(--text)}
+    .back-links{display:flex;gap:1.75rem;flex-wrap:wrap}
+    .single-only{display:none}
+    body.single .single-only{display:inline-flex}
+    body.single .cert-list,body.single .list-only{display:none}
+    body.single .cert-layout{grid-template-columns:1fr}
+    body.single .cert-bar h2{display:none}
+    body.single .cert-bar{justify-content:flex-end}
+    body.single .cert-frame{height:85vh}
+    .cert-meta{display:block;margin-bottom:.5rem}
     .cert-intro{font-size:1rem;line-height:1.8;color:var(--text2);font-weight:300;max-width:620px;margin-bottom:2.5rem}
     .cert-layout{display:grid;grid-template-columns:340px 1fr;gap:2.5rem;align-items:start}
     .cert-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;position:sticky;top:110px}
@@ -65,9 +74,13 @@
 </nav>
 
 <section class="section cert-page">
-  <a href="index.html" class="back-home">&larr; Back to Home</a>
-  <h2>Certificates</h2>
-  <p class="cert-intro">Certifications and professional training in teaching, research methods, and media analytics. Select a certificate to view it.</p>
+  <div class="back-links">
+    <a href="certificates.html" class="back-home single-only">&larr; All Certificates</a>
+    <a href="index.html" class="back-home">&larr; Back to Home</a>
+  </div>
+  <span id="page-meta" class="course-code cert-meta single-only"></span>
+  <h2 id="page-title">Certificates</h2>
+  <p id="page-intro" class="cert-intro">Certifications and professional training in teaching, research methods, and media analytics. Select a certificate to view it.</p>
 
   <div class="cert-layout">
     <ul class="cert-list" role="tablist" aria-label="Certificates">
@@ -102,7 +115,8 @@
       <div class="cert-bar">
         <h2 id="cert-title">Graduate Student Data Visualization Award</h2>
         <div class="cert-actions">
-          <a id="cert-open" class="card-link" href="certificates/DataViz.pdf" target="_blank" rel="noopener">Open in new tab &rarr;</a>
+          <a id="cert-open" class="card-link list-only" href="certificates.html?c=dataviz" target="_blank" rel="noopener">Open in new tab &rarr;</a>
+          <a id="cert-pdf" class="card-link" href="certificates/DataViz.pdf" target="_blank" rel="noopener">View PDF</a>
           <a id="cert-download" class="card-link" href="certificates/DataViz.pdf" download>Download</a>
         </div>
       </div>
@@ -131,17 +145,29 @@
   const title=document.getElementById('cert-title');
   const open=document.getElementById('cert-open');
   const dl=document.getElementById('cert-download');
-  function show(btn){
+  const pdf=document.getElementById('cert-pdf');
+  const slug=b=>b.dataset.file.split('/').pop().replace('.pdf','').toLowerCase();
+  const find=s=>s&&[...items].find(b=>slug(b)===s.toLowerCase());
+  function show(btn,single){
     items.forEach(b=>b.setAttribute('aria-selected',b===btn?'true':'false'));
-    const f=btn.dataset.file;
+    const f=btn.dataset.file,name=btn.querySelector('.course-name').textContent;
     frame.src=f+'#view=FitH';
-    open.href=f;dl.href=f;
-    title.textContent=btn.querySelector('.course-name').textContent;
-    history.replaceState(null,'','#'+f.split('/').pop().replace('.pdf',''));
+    pdf.href=f;dl.href=f;open.href='certificates.html?c='+slug(btn);
+    title.textContent=name;
+    if(single){
+      document.body.classList.add('single');
+      document.getElementById('page-title').textContent=name;
+      document.getElementById('page-meta').textContent=btn.querySelector('.course-code').textContent;
+      document.getElementById('page-intro').textContent=btn.querySelector('.cert-issuer').textContent;
+      document.title=name+' | Ertan Ağaoğlu';
+    }else{
+      history.replaceState(null,'','#'+slug(btn));
+    }
   }
   items.forEach(b=>b.addEventListener('click',()=>{show(b);if(window.innerWidth<=900)document.querySelector('.cert-viewer').scrollIntoView({behavior:'smooth'})}));
-  const h=location.hash.slice(1);
-  if(h){const m=[...items].find(b=>b.dataset.file.endsWith('/'+h+'.pdf'));if(m)show(m)}
+  const c=find(new URLSearchParams(location.search).get('c'));
+  if(c)show(c,true);
+  else{const m=find(location.hash.slice(1));if(m)show(m)}
 })();
 </script>
 </body>
