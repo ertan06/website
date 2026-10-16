@@ -343,7 +343,7 @@ footer p{font-size:.75rem;color:var(--muted)}
 @media(prefers-reduced-motion:reduce){.hb-page{transition:none}}
 
 /* App slider */
-.app-item+.app-item,.cb-row+.app-item{border-top:1px solid var(--border)}
+.app-item+.app-item,.cb-row+.app-item,.app-item+.cb-row{border-top:1px solid var(--border)}
 .app-slider{position:relative;overflow:hidden;border-bottom:1px solid var(--border);background:#000;outline:none}
 .app-slides{display:flex;transition:transform .7s cubic-bezier(.4,0,.2,1);will-change:transform}
 .app-slide{flex:0 0 100%;aspect-ratio:1.9/1;overflow:hidden}
