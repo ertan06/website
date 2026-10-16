@@ -30,7 +30,8 @@
     .portfolio-hero .hero-desc{font-size:1.05rem;line-height:1.8;max-width:560px;color:rgba(255,255,255,.92);text-shadow:0 1px 4px rgba(0,0,0,.4);font-weight:300}
     .portfolio-hero .overline{display:inline-block;color:#8fcbe6;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem;font-weight:600}
     nav:not(.scrolled) .nav-logo{color:#fff}
-    nav:not(.scrolled) .nav-links a{color:rgba(255,255,255,.85)}
+    nav:not(.scrolled) .nav-links a,nav:not(.scrolled) .nav-more-btn{color:rgba(255,255,255,.85)}
+    nav:not(.scrolled) .nav-more-btn:hover,nav:not(.scrolled) .nav-more.open .nav-more-btn{color:#fff}
     nav:not(.scrolled) .nav-links a:hover,nav:not(.scrolled) .nav-links a.active{color:#fff}
     nav:not(.scrolled) .nav-toggle svg{stroke:#fff}
     .scroll-arrow{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;cursor:pointer;text-decoration:none;color:rgba(255,255,255,.8);z-index:1}
@@ -58,6 +59,9 @@
       <li><a href="teaching.html">Teaching</a></li>
       <li><a href="portfolio.html" class="active">Portfolio</a></li>
       <li><a href="beyond-academia.html">About Me / Contact</a></li>
+      <li class="nav-more"><button type="button" class="nav-more-btn" aria-expanded="false" aria-haspopup="true">More <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <ul class="nav-more-menu"><li><a href="certificates.html">Certifications</a></li></ul>
+      </li>
     </ul>
   </div>
 </nav>
@@ -318,5 +322,6 @@ document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
 <script src="lightbox.js" defer></script>
 <script src="hb-stack.js" defer></script>
 <script src="app-slider.js" defer></script>
+<script src="nav-more.js" defer></script>
 </body>
 </html>

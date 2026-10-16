@@ -476,3 +476,19 @@ section[id],.app-card[id],.app-item[id],.cb-row[id],.contact-card[id]{scroll-mar
   .page-header{padding:8rem 1.5rem 3rem}
   .page-header h1{font-size:2.5rem}
 }
+
+/* Nav "More" dropdown */
+.nav-more{position:relative}
+.nav-more-btn{display:inline-flex;align-items:center;gap:.3rem;background:none;border:0;padding:0;cursor:pointer;font:inherit;font-size:.8rem;font-weight:500;color:var(--text2);letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-more-btn:hover,.nav-more-btn.active,.nav-more.open .nav-more-btn{color:var(--text)}
+.nav-more-btn svg{width:12px;height:12px;stroke:currentColor;stroke-width:2.25;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.nav-more.open .nav-more-btn svg{transform:rotate(180deg)}
+.nav-more-menu{list-style:none;position:absolute;top:calc(100% + 1rem);right:0;min-width:200px;background:var(--bg);border:1px solid var(--border);border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.08);padding:.5rem;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s}
+.nav-more.open .nav-more-menu,.nav-more:focus-within .nav-more-menu{opacity:1;visibility:visible;transform:translateY(0)}
+nav .nav-links .nav-more .nav-more-menu a{display:block;padding:.65rem .9rem;border-radius:6px;color:var(--text2)}
+nav .nav-links .nav-more .nav-more-menu a:hover,nav .nav-links .nav-more .nav-more-menu a.active{color:var(--accent);background:rgba(21,96,130,.07)}
+@media(max-width:900px){
+  .nav-more-btn{display:none}
+  .nav-more-menu{position:static;min-width:0;border:0;box-shadow:none;padding:0;background:none;opacity:1;visibility:visible;transform:none}
+  nav .nav-links .nav-more .nav-more-menu a{padding:0;background:none}
+}
