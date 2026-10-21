@@ -25,8 +25,8 @@ body {
 /* Purple band with repeating course number strip */
 .band {
   background: var(--band);
-  height: 30vh;
-  min-height: 160px;
+  height: 18vh;
+  min-height: 100px;
   padding-top: 18px;
 }
 
