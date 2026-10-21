@@ -28,6 +28,16 @@ body {
   height: 18vh;
   min-height: 100px;
   padding-top: 18px;
+  position: relative;
+}
+
+.clock {
+  position: absolute;
+  right: 6vw;
+  bottom: 10px;
+  font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .strip {

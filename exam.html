@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="exam.css">
 </head>
 <body>
-  <div class="band"><div class="strip" id="strip"></div></div>
+  <div class="band"><div class="strip" id="strip"></div><div class="clock" id="clock"></div></div>
 
   <main class="content">
     <h1 class="exam-title" id="examName"></h1>
@@ -62,6 +62,14 @@
     // Repeat the course number (or the course name) across the strip
     const num = (course.match(/\d+/) || [course + ' '])[0];
     document.getElementById('strip').textContent = num.repeat(Math.ceil(400 / num.length));
+
+    // Current time
+    const clockEl = document.getElementById('clock');
+    function renderClock() {
+      clockEl.textContent = new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    }
+    renderClock();
+    setInterval(renderClock, 1000);
 
     // Password toggle
     const password = settings.password || '';
