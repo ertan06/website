@@ -8,42 +8,43 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="exam.css">
 </head>
 <body>
-  <main class="exam-wrap">
-    <header class="exam-header">
-      <h2 class="course-name" id="courseName"></h2>
-      <h1 class="exam-name" id="examName"></h1>
-    </header>
+  <div class="band"><div class="strip" id="strip"></div></div>
 
-    <section class="card timer">
-      <div class="timer-display" id="timerDisplay">75:00</div>
-      <div class="timer-controls">
-        <button class="btn primary" id="startBtn">Start</button>
-        <button class="btn" id="resetBtn">Reset</button>
-        <input class="input minutes-input" id="minutesInput" type="number" min="1" max="999" value="75" aria-label="Minutes">
-        <button class="btn" id="setBtn">Set minutes</button>
-      </div>
-    </section>
+  <main class="content">
+    <h1 class="exam-title" id="examName"></h1>
+    <p class="course-sub" id="courseName"></p>
 
-    <section class="card">
-      <p class="card-label">Password</p>
-      <div class="password-row">
-        <span class="password-value" id="passwordValue">••••••••</span>
-        <button class="eye-btn" id="eyeBtn" aria-label="Show password"></button>
-      </div>
-    </section>
-
-    <section class="card">
-      <p class="card-label">Instructions</p>
+    <div class="grid">
       <ul class="rules">
-        <li>🚫 You are not allowed to use any material during the exam. This includes the internet as well as GenAI tools. Attempting to do so is considered cheating and is reported as such.</li>
-        <li>📵 Students are expected to put any electronic devices away before the exam starts. This applies to smartphones and tablets.</li>
-        <li>🚶‍➡️ If you need to leave the classroom for any reason, you are expected to inform me and leave your electronics behind.</li>
+        <li><span class="ico">🚫</span><span>You are not allowed to use any material during the exam. This includes the internet as well as GenAI tools. Attempting to do so is considered cheating and is reported as such.</span></li>
+        <li><span class="ico">📵</span><span>Students are expected to put any electronic devices away before the exam starts. This applies to smartphones and tablets.</span></li>
+        <li><span class="ico">🚶‍➡️</span><span>If you need to leave the classroom for any reason, you are expected to inform me and leave your electronics behind.</span></li>
       </ul>
-    </section>
+
+      <div class="side">
+        <div>
+          <p class="label">Time remaining</p>
+          <div class="timer-display" id="timerDisplay">75:00</div>
+          <div class="controls">
+            <button class="btn primary" id="startBtn">Start</button>
+            <button class="btn" id="resetBtn">Reset</button>
+            <input class="input minutes-input" id="minutesInput" type="number" min="1" max="999" value="75" aria-label="Minutes">
+            <button class="btn" id="setBtn">Set</button>
+          </div>
+        </div>
+        <div>
+          <p class="label">Password</p>
+          <div class="password-row">
+            <span class="password-value" id="passwordValue">••••••••</span>
+            <button class="eye-btn" id="eyeBtn" aria-label="Show password"></button>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script>
@@ -51,9 +52,14 @@
     let settings = {};
     try { settings = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
 
-    document.getElementById('courseName').textContent = settings.course || 'Course Name';
+    const course = settings.course || 'Course Name';
+    document.getElementById('courseName').textContent = course;
     document.getElementById('examName').textContent = settings.exam || 'Exam Name';
     document.title = settings.exam || 'Exam';
+
+    // Repeat the course number (or the course name) across the strip
+    const num = (course.match(/\d+/) || [course + ' '])[0];
+    document.getElementById('strip').textContent = num.repeat(Math.ceil(400 / num.length));
 
     // Password toggle
     const password = settings.password || '';
