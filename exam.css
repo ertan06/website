@@ -194,17 +194,11 @@ body {
 .pw-block .label,
 .password-value { transition: font-size 0.25s ease, color 0.25s ease; }
 
-.pw-block.revealed .label { font-size: 1.3rem; color: var(--text); }
+.pw-block.revealed .label { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-style: normal; color: var(--text); }
 
 .pw-block.revealed .password-value {
   font-size: clamp(2.6rem, 5.5vw, 4rem);
-  color: var(--accent);
-  animation: pw-pulse 1.4s ease-in-out infinite;
-}
-
-@keyframes pw-pulse {
-  0%, 100% { text-shadow: 0 0 0 transparent; opacity: 1; }
-  50% { text-shadow: 0 0 24px var(--accent); opacity: 0.6; }
+  color: #ffe600;
 }
 
 .eye-btn {
