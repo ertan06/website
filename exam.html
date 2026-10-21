@@ -38,7 +38,7 @@
             <button class="btn" id="setBtn">Set</button>
           </div>
         </div>
-        <div>
+        <div class="pw-block" id="pwBlock">
           <p class="label">Password</p>
           <div class="password-row">
             <span class="password-value" id="passwordValue">••••••••</span>
@@ -82,6 +82,7 @@
       pwEl.textContent = shown ? (password || '(not set)') : '••••••••';
       eyeBtn.innerHTML = shown ? eyeClosed : eyeOpen;
       eyeBtn.setAttribute('aria-label', shown ? 'Hide password' : 'Show password');
+      document.getElementById('pwBlock').classList.toggle('revealed', shown);
     }
     eyeBtn.addEventListener('click', () => { shown = !shown; renderPw(); });
     renderPw();
