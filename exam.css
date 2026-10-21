@@ -112,7 +112,7 @@ body {
 }
 
 .rules li { display: flex; gap: 16px; }
-.rules .ico { flex-shrink: 0; width: 1.6em; text-align: center; }
+.rules .ico { flex-shrink: 0; width: 1.6em; font-size: 1.4em; line-height: 1.1; text-align: center; }
 
 /* Timer + password */
 .side { display: flex; flex-direction: column; gap: 28px; }
