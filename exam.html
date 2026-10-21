@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Exam</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="exam.css">
+</head>
+<body>
+  <main class="exam-wrap">
+    <header class="exam-header">
+      <h2 class="course-name" id="courseName"></h2>
+      <h1 class="exam-name" id="examName"></h1>
+    </header>
+
+    <section class="card timer">
+      <div class="timer-display" id="timerDisplay">75:00</div>
+      <div class="timer-controls">
+        <button class="btn primary" id="startBtn">Start</button>
+        <button class="btn" id="resetBtn">Reset</button>
+        <input class="input minutes-input" id="minutesInput" type="number" min="1" max="999" value="75" aria-label="Minutes">
+        <button class="btn" id="setBtn">Set minutes</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="card-label">Password</p>
+      <div class="password-row">
+        <span class="password-value" id="passwordValue">••••••••</span>
+        <button class="eye-btn" id="eyeBtn" aria-label="Show password"></button>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="card-label">Instructions</p>
+      <ul class="rules">
+        <li>🚫 You are not allowed to use any material during the exam. This includes the internet as well as GenAI tools. Attempting to do so is considered cheating and is reported as such.</li>
+        <li>📵 Students are expected to put any electronic devices away before the exam starts. This applies to smartphones and tablets.</li>
+        <li>🚶‍➡️ If you need to leave the classroom for any reason, you are expected to inform me and leave your electronics behind.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const KEY = 'examSettings';
+    let settings = {};
+    try { settings = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+
+    document.getElementById('courseName').textContent = settings.course || 'Course Name';
+    document.getElementById('examName').textContent = settings.exam || 'Exam Name';
+    document.title = settings.exam || 'Exam';
+
+    // Password toggle
+    const password = settings.password || '';
+    const pwEl = document.getElementById('passwordValue');
+    const eyeBtn = document.getElementById('eyeBtn');
+    const eyeOpen = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+    const eyeClosed = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+    let shown = false;
+    function renderPw() {
+      pwEl.textContent = shown ? (password || '(not set)') : '••••••••';
+      eyeBtn.innerHTML = shown ? eyeClosed : eyeOpen;
+      eyeBtn.setAttribute('aria-label', shown ? 'Hide password' : 'Show password');
+    }
+    eyeBtn.addEventListener('click', () => { shown = !shown; renderPw(); });
+    renderPw();
+
+    // Timer
+    const display = document.getElementById('timerDisplay');
+    const startBtn = document.getElementById('startBtn');
+    const minutesInput = document.getElementById('minutesInput');
+    let total = 75 * 60, remaining = total, endAt = null, tick = null;
+
+    function fmt(s) {
+      const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
+      const pad = n => String(n).padStart(2, '0');
+      return h ? `${h}:${pad(m)}:${pad(sec)}` : `${pad(m)}:${pad(sec)}`;
+    }
+    function render() {
+      display.textContent = fmt(remaining);
+      display.classList.toggle('done', remaining === 0);
+    }
+    function stop() {
+      clearInterval(tick); tick = null; endAt = null;
+      startBtn.textContent = 'Start';
+    }
+    function step() {
+      remaining = Math.max(0, Math.round((endAt - Date.now()) / 1000));
+      render();
+      if (remaining === 0) stop();
+    }
+    startBtn.addEventListener('click', () => {
+      if (tick) { step(); stop(); return; }
+      if (remaining === 0) return;
+      endAt = Date.now() + remaining * 1000;
+      tick = setInterval(step, 250);
+      startBtn.textContent = 'Pause';
+    });
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      stop(); remaining = total; render();
+    });
+    document.getElementById('setBtn').addEventListener('click', () => {
+      const m = parseInt(minutesInput.value, 10);
+      if (!m || m < 1) return;
+      stop(); total = m * 60; remaining = total; render();
+    });
+    render();
+  </script>
+</body>
+</html>
