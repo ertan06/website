@@ -112,6 +112,14 @@ body {
 }
 
 .rules li { display: flex; gap: 16px; }
+.rules .good-luck {
+  margin-top: 8px;
+  font-size: 1.4em;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--accent);
+}
+
 .rules .ico { flex-shrink: 0; width: 1.6em; font-size: 1.4em; line-height: 1.1; text-align: center; }
 
 /* Timer + password */
