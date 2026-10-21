@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Exam Admin</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="exam.css">
+</head>
+<body>
+  <main class="exam-wrap" style="max-width: 600px;">
+    <header class="exam-header">
+      <h1 class="exam-name">Exam Admin</h1>
+    </header>
+
+    <section class="card">
+      <form class="admin-form" id="adminForm">
+        <label>Course name
+          <input class="input" id="course" type="text" autocomplete="off">
+        </label>
+        <label>Exam name
+          <input class="input" id="exam" type="text" autocomplete="off">
+        </label>
+        <label>Password
+          <input class="input" id="password" type="text" autocomplete="off">
+        </label>
+        <div class="admin-actions">
+          <button class="btn primary" type="submit">Save</button>
+          <a class="btn" href="exam.html" style="text-decoration:none;">Open exam page</a>
+          <span class="saved-msg" id="savedMsg" hidden>Saved</span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const KEY = 'examSettings';
+    let settings = {};
+    try { settings = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+
+    const fields = ['course', 'exam', 'password'];
+    fields.forEach(f => { document.getElementById(f).value = settings[f] || ''; });
+
+    document.getElementById('adminForm').addEventListener('submit', e => {
+      e.preventDefault();
+      fields.forEach(f => { settings[f] = document.getElementById(f).value.trim(); });
+      try { localStorage.setItem(KEY, JSON.stringify(settings)); } catch (err) {}
+      const msg = document.getElementById('savedMsg');
+      msg.hidden = false;
+      setTimeout(() => { msg.hidden = true; }, 2000);
+    });
+  </script>
+</body>
+</html>
