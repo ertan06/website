@@ -85,7 +85,16 @@
       eyeBtn.setAttribute('aria-label', shown ? 'Hide password' : 'Show password');
       document.getElementById('pwBlock').classList.toggle('revealed', shown);
     }
-    eyeBtn.addEventListener('click', () => { shown = !shown; renderPw(); });
+    // Pulsing border around the revealed password for one minute
+    const pwBlock = document.getElementById('pwBlock');
+    let highlightTimer = null;
+    eyeBtn.addEventListener('click', () => {
+      shown = !shown;
+      renderPw();
+      clearTimeout(highlightTimer);
+      pwBlock.classList.toggle('highlight', shown);
+      if (shown) highlightTimer = setTimeout(() => pwBlock.classList.remove('highlight'), 60000);
+    });
     renderPw();
 
     // Timer

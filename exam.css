@@ -201,6 +201,15 @@ body {
   color: #ffe600;
 }
 
+.pw-block { border-radius: 12px; outline: 3px solid transparent; outline-offset: 14px; }
+
+.pw-block.highlight { animation: pw-border 1.2s ease-in-out infinite; }
+
+@keyframes pw-border {
+  0%, 100% { outline-color: #ffe600; }
+  50% { outline-color: rgba(255, 230, 0, 0.15); }
+}
+
 .eye-btn {
   background: transparent;
   border: none;
